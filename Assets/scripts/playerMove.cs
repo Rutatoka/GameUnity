@@ -8,35 +8,49 @@ public class playerMove : MonoBehaviour
     private bool facingRight = true;
 
     public float speed;
-    private float moveInput;
+  
     private Animator anim;
+    private Vector2 moveInput;
+    private Vector2 moveVelocity;
+    private Animator camAnim;
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-      
+        camAnim = GameObject.FindGameObjectWithTag("CM vcam1").GetComponent<Animator>();
+
+
+    }
+    private void Update()
+    {
+        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        moveVelocity = moveInput.normalized * speed;
+
     }
     private void FixedUpdate()
     {
-        moveInput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveInput*speed,rb.velocity.y);
-        if (facingRight == false && moveInput > 0)
-        {
-            Flip();
-        }
-        else if (facingRight == true && moveInput < 0)
-        {
-            Flip();
-        }
-        if (moveInput==0)
-        {
-            anim.SetBool("isRunning", false);
-        }
-       else
-        {
-            anim.SetBool("isRunning", true);
-        }
+
+        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+       
+       if (facingRight == false && moveInput.x > 0)
+       {
+           Flip();
+       }
+       else if (facingRight == true && moveInput.x < 0)
+      {
+       Flip();
+  }
+           if (moveInput.x==0)
+       {
+          anim.SetBool("isRunning", false);
+       }
+        
+        else
+     {
+          anim.SetBool("isRunning", true);
+      }
     }
     void Flip()
     {
