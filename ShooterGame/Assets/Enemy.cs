@@ -1,0 +1,89 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Enemy : MonoBehaviour
+{
+    public int health;
+    public float speed;
+
+    public float timeBtwAtack;
+    public float startTimeBtwAtack;
+    public int damage;
+    private Animator anim;
+    private Player player;
+    private float stopTime;
+    public float startStopTime;
+    public float normalspeed;
+   public GameObject effect1;
+
+    private void Start()
+    {
+        
+        anim = GetComponent<Animator>();
+        player = FindObjectOfType<Player>();
+
+
+    }
+    private void Update()
+
+    {
+
+        if (stopTime<=0)
+        {
+            speed = normalspeed;
+        }
+        else
+        {
+            speed = 0;
+            stopTime -= Time.deltaTime;
+        }
+        if (health <= 0)
+        { 
+          
+            Destroy(gameObject);
+
+          //  Instantiate(effect1, transform.position , Quaternion.identity);
+
+           
+        }
+        if (player.transform.position.x >transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+
+        }
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position,speed*Time.deltaTime);
+
+
+    }
+    public void TakeDamage(int damage)
+    {
+        stopTime = startStopTime;  
+        health -= damage;
+      //  Instantiate(effect1, transform.position, Quaternion.identity);
+    }
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (timeBtwAtack<=0)
+            {
+                anim.SetTrigger("attackEnemy");
+            }
+            else
+            {
+                timeBtwAtack -= Time.deltaTime;
+            }
+        }
+    }
+    public void OnEnemyAttack() {
+    Instantiate(effect1, player.transform.position, Quaternion.identity);
+        player.health -= damage;
+        timeBtwAtack = startTimeBtwAtack;
+    }
+
+}
