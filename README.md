@@ -1,2 +1,2 @@
 # GameUnity
-Приложение в папке bin, название файла Afina.exe
+Приложение в папке bin, название файла GameShooter.exe
