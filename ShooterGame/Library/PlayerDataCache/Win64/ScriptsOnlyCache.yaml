@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - Player
     - ScoreManager
     - menu
+    - pause
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineComposer
@@ -18,29 +19,23 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.CollabProxy.Editor.dll:
     - Unity.Cloud.Collaborate.UserInterface.CollaborateWindow
-    - Unity.Cloud.Collaborate.UserInterface.WindowCache
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -90,37 +85,43 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2254}
+      Script: {instanceID: 1518}
     - Class: 114
-      Script: {instanceID: 2296}
+      Script: {instanceID: 2258}
     - Class: 114
-      Script: {instanceID: 2644}
+      Script: {instanceID: 2300}
     - Class: 114
-      Script: {instanceID: 2698}
+      Script: {instanceID: 2648}
     - Class: 114
-      Script: {instanceID: 2716}
+      Script: {instanceID: 2702}
     - Class: 114
-      Script: {instanceID: 2782}
+      Script: {instanceID: 2720}
     - Class: 114
-      Script: {instanceID: 2878}
+      Script: {instanceID: 2786}
     - Class: 114
-      Script: {instanceID: 2966}
+      Script: {instanceID: 2882}
     - Class: 114
-      Script: {instanceID: 3108}
+      Script: {instanceID: 2970}
     - Class: 114
-      Script: {instanceID: 3136}
+      Script: {instanceID: 3112}
     - Class: 114
-      Script: {instanceID: 3262}
+      Script: {instanceID: 3140}
     - Class: 114
-      Script: {instanceID: 3370}
+      Script: {instanceID: 3266}
     - Class: 114
-      Script: {instanceID: 4222}
+      Script: {instanceID: 3374}
     - Class: 114
-      Script: {instanceID: 5044}
+      Script: {instanceID: 3496}
     - Class: 114
-      Script: {instanceID: 5780}
+      Script: {instanceID: 4226}
     - Class: 114
-      Script: {instanceID: 34910}
+      Script: {instanceID: 4904}
+    - Class: 114
+      Script: {instanceID: 5050}
+    - Class: 114
+      Script: {instanceID: 5788}
+    - Class: 114
+      Script: {instanceID: 5832}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -167,19 +168,23 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 1518}
     - Class: 114
-      Script: {instanceID: 1770}
+      Script: {instanceID: 1540}
     - Class: 114
-      Script: {instanceID: 2254}
+      Script: {instanceID: 1774}
     - Class: 114
-      Script: {instanceID: 2698}
+      Script: {instanceID: 2258}
     - Class: 114
-      Script: {instanceID: 3108}
+      Script: {instanceID: 2702}
     - Class: 114
-      Script: {instanceID: 3492}
+      Script: {instanceID: 2882}
     - Class: 114
-      Script: {instanceID: 67270}
+      Script: {instanceID: 3112}
+    - Class: 114
+      Script: {instanceID: 3374}
+    - Class: 114
+      Script: {instanceID: 3496}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -221,6 +226,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine.PostFX
     className: CinemachineVolumeSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: menu
   - hash:
       serializedVersion: 2
       Hash: 77aaaaa51f7a8d8ff333a879741e47d2
@@ -883,6 +894,12 @@ ScriptsOnlyBuild:
     className: CinemachineStateDrivenCamera
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScoreManager
+  - hash:
+      serializedVersion: 2
       Hash: 87ad3705a58f19c47136728d4a6e9c47
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -967,6 +984,12 @@ ScriptsOnlyBuild:
     className: CinemachineRecomposer
   - hash:
       serializedVersion: 2
+      Hash: 7050a01ca4b1d5829f77c127b638f9c1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: parallax
+  - hash:
+      serializedVersion: 2
       Hash: b5c3dbcb94925c8b595ad16a62b44788
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -1009,6 +1032,12 @@ ScriptsOnlyBuild:
     className: CinemachineFollowZoom
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: pause
+  - hash:
+      serializedVersion: 2
       Hash: abf1930d8126d0b2e00e9449129a0190
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -1025,24 +1054,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: 7050a01ca4b1d5829f77c127b638f9c1
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: parallax
-  - hash:
-      serializedVersion: 2
-      Hash: 73aef7f8f6cba6b3b22a71aff8779945
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ScoreManager
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: menu
   platform: 19
   scenePathNames:
   - Assets/Scenes/menu.unity
