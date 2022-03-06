@@ -11,21 +11,22 @@ public class Player : MonoBehaviour
     private bool facingRight = true;
 
     public float speed;
-    public float health;
+    public int health;
     private Animator anim;
     private Vector2 moveInput;
     private Vector2 moveVelocity;
- 
+    public Text healthDisplay;
+    public int score;
+    public Text scoreDisplay;
+    public Text scoreDisplayPanel;
+    public GameObject Panel;
 
-  
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-      
-
-
+        
     }
     private void Update()
     {
@@ -58,7 +59,10 @@ public class Player : MonoBehaviour
 
         if (health<=0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Panel.SetActive(true);
+            Destroy(scoreDisplay);
+           
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
     void Flip()
@@ -67,5 +71,15 @@ public class Player : MonoBehaviour
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
+    }
+    public void ChangeHealth(int healthValue)
+    {
+       health += healthValue;
+   //    healthDisplay.text = "-" + health;
+     //   scoreDisplay.text = "" + score;
+    }
+    public void Kill()
+    {
+        score++;
     }
 }

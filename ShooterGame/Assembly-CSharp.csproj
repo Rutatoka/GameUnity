@@ -53,14 +53,16 @@
     <UnityVersion>2020.3.20f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\menu.cs" />
     <Compile Include="Assets\Bullet.cs" />
     <Compile Include="Assets\scripts\Player.cs" />
     <Compile Include="Assets\Enemy.cs" />
+    <Compile Include="Assets\ScoreManager.cs" />
     <Compile Include="Assets\Gun.cs" />
     <Compile Include="Assets\parallax.cs" />
-    <Compile Include="Assets\ScoreManager.cs" />
-    <Compile Include="Assets\menu.cs" />
     <Compile Include="Assets\pause.cs" />
+    <Compile Include="Assets\Restart.cs" />
+    <Compile Include="Assets\timer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

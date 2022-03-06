@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Enemy : MonoBehaviour
 {
@@ -16,13 +18,14 @@ public class Enemy : MonoBehaviour
     public float startStopTime;
     public float normalspeed;
    public GameObject effect1;
+ 
 
     private void Start()
     {
         
         anim = GetComponent<Animator>();
         player = FindObjectOfType<Player>();
-
+      
 
     }
     private void Update()
@@ -42,10 +45,12 @@ public class Enemy : MonoBehaviour
         { 
           
             Destroy(gameObject);
-
-          //  Instantiate(effect1, transform.position , Quaternion.identity);
-
+            player.Kill();
+            player.scoreDisplay.text = "" + player.score;
            
+            //  Instantiate(effect1, transform.position , Quaternion.identity);
+
+
         }
         if (player.transform.position.x >transform.position.x)
         {
@@ -83,6 +88,7 @@ public class Enemy : MonoBehaviour
     public void OnEnemyAttack() {
     Instantiate(effect1, player.transform.position, Quaternion.identity);
         player.health -= damage;
+        player.healthDisplay.text = ""+player.health;
         timeBtwAtack = startTimeBtwAtack;
     }
 

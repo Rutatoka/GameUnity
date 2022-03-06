@@ -1,0 +1,732 @@
+fileFormatVersion: 2
+guid: 8a53ee9360b9dc242ab5efd596414457
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5108560177805453828
+    second: Weiholmir_lowercase_sheet_0
+  - first:
+      213: -3490385927666641153
+    second: Weiholmir_lowercase_sheet_1
+  - first:
+      213: -5261632304774254291
+    second: Weiholmir_lowercase_sheet_2
+  - first:
+      213: 7171342608080263950
+    second: Weiholmir_lowercase_sheet_3
+  - first:
+      213: -2946068197518139034
+    second: Weiholmir_lowercase_sheet_4
+  - first:
+      213: -269989654892432071
+    second: Weiholmir_lowercase_sheet_5
+  - first:
+      213: -3100859770404057626
+    second: Weiholmir_lowercase_sheet_6
+  - first:
+      213: 1893059557833874714
+    second: Weiholmir_lowercase_sheet_7
+  - first:
+      213: -2112413259584981746
+    second: Weiholmir_lowercase_sheet_8
+  - first:
+      213: -8750197000359704743
+    second: Weiholmir_lowercase_sheet_9
+  - first:
+      213: 7274141025763431473
+    second: Weiholmir_lowercase_sheet_10
+  - first:
+      213: -5488532768821903727
+    second: Weiholmir_lowercase_sheet_11
+  - first:
+      213: 9038439521885457836
+    second: Weiholmir_lowercase_sheet_12
+  - first:
+      213: 5550824620186763637
+    second: Weiholmir_lowercase_sheet_13
+  - first:
+      213: 8381981252760026919
+    second: Weiholmir_lowercase_sheet_14
+  - first:
+      213: 3608288452821121283
+    second: Weiholmir_lowercase_sheet_15
+  - first:
+      213: -3031125053329276673
+    second: Weiholmir_lowercase_sheet_16
+  - first:
+      213: 2913350939840818613
+    second: Weiholmir_lowercase_sheet_17
+  - first:
+      213: -7926601129233330632
+    second: Weiholmir_lowercase_sheet_18
+  - first:
+      213: -59862563003002815
+    second: Weiholmir_lowercase_sheet_19
+  - first:
+      213: -1549313027671223569
+    second: Weiholmir_lowercase_sheet_20
+  - first:
+      213: 4677893990966142774
+    second: Weiholmir_lowercase_sheet_21
+  - first:
+      213: 7765273286183034981
+    second: Weiholmir_lowercase_sheet_22
+  - first:
+      213: 3983754732420258477
+    second: Weiholmir_lowercase_sheet_23
+  - first:
+      213: -3400678214789195962
+    second: Weiholmir_lowercase_sheet_24
+  - first:
+      213: -6417946843480752738
+    second: Weiholmir_lowercase_sheet_25
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 14
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40aecc75a6045e640800000000000000
+      internalID: 5108560177805453828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 14
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6586cdd78af8fc0800000000000000
+      internalID: -3490385927666641153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 14
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d21f53fcb4deaf6b0800000000000000
+      internalID: -5261632304774254291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 14
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b5f3d4b1ab58360800000000000000
+      internalID: 7171342608080263950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 14
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6612bd255967d17d0800000000000000
+      internalID: -2946068197518139034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 14
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9353b1fd6ddc04cf0800000000000000
+      internalID: -269989654892432071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 14
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed44c6c77887f4d0800000000000000
+      internalID: -3100859770404057626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 14
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d985353af754a10800000000000000
+      internalID: 1893059557833874714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 14
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05bc9b15533fa2e0800000000000000
+      internalID: -2112413259584981746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 7
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9570fde403e019680800000000000000
+      internalID: -8750197000359704743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 7
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13499be09b0f2f460800000000000000
+      internalID: 7274141025763431473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 7
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e7748b680d4d3b0800000000000000
+      internalID: -5488532768821903727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 7
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad85d18bdcfe6d70800000000000000
+      internalID: 9038439521885457836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 7
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57189b0259d780d40800000000000000
+      internalID: 5550824620186763637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 7
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72fbebc2a87c25470800000000000000
+      internalID: 8381981252760026919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 7
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 309fb85fa37331230800000000000000
+      internalID: 3608288452821121283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff08586d2d74fe5d0800000000000000
+      internalID: -3031125053329276673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd23438e3d4e6820800000000000000
+      internalID: 2913350939840818613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e46d7154e0ff190800000000000000
+      internalID: -7926601129233330632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 0
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1409cdce0535b2ff0800000000000000
+      internalID: -59862563003002815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 0
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe295cb820cbf7ae0800000000000000
+      internalID: -1549313027671223569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 637a87cdcc73be040800000000000000
+      internalID: 4677893990966142774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 7
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56025ce59eac3cb60800000000000000
+      internalID: 7765273286183034981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 7
+        width: 2
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daad03282d3294730800000000000000
+      internalID: 3983754732420258477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 14
+        width: 2
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64794146e2d5ec0d0800000000000000
+      internalID: -3400678214789195962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weiholmir_lowercase_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 7
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d7dfe795fdee6a0800000000000000
+      internalID: -6417946843480752738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
