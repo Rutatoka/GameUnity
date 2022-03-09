@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
         if (health<=0)
         {
             Panel.SetActive(true);
-            Destroy(scoreDisplay);
+            Destroy(gameObject);
            
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

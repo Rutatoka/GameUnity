@@ -5,9 +5,11 @@ ScriptsOnlyBuild:
     - Enemy
     - Gun
     - Player
+    - Restart
     - ScoreManager
     - menu
     - pause
+    - timer
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineComposer
@@ -104,27 +106,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2882}
     - Class: 114
-      Script: {instanceID: 2970}
+      Script: {instanceID: 2926}
     - Class: 114
-      Script: {instanceID: 3112}
+      Script: {instanceID: 2972}
     - Class: 114
-      Script: {instanceID: 3140}
+      Script: {instanceID: 3114}
     - Class: 114
-      Script: {instanceID: 3266}
+      Script: {instanceID: 3142}
     - Class: 114
-      Script: {instanceID: 3374}
+      Script: {instanceID: 3268}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 3376}
     - Class: 114
-      Script: {instanceID: 4226}
+      Script: {instanceID: 3498}
     - Class: 114
-      Script: {instanceID: 4904}
+      Script: {instanceID: 4228}
     - Class: 114
-      Script: {instanceID: 5050}
+      Script: {instanceID: 4906}
     - Class: 114
-      Script: {instanceID: 5788}
+      Script: {instanceID: 5052}
     - Class: 114
-      Script: {instanceID: 5832}
+      Script: {instanceID: 5762}
+    - Class: 114
+      Script: {instanceID: 5792}
+    - Class: 114
+      Script: {instanceID: 5836}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -183,11 +189,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2882}
     - Class: 114
-      Script: {instanceID: 3112}
+      Script: {instanceID: 3114}
     - Class: 114
-      Script: {instanceID: 3374}
+      Script: {instanceID: 3376}
     - Class: 114
-      Script: {instanceID: 3496}
+      Script: {instanceID: 3498}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -477,6 +483,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 7338d40094e96dad21371c3eb8600cc5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: timer
+  - hash:
+      serializedVersion: 2
       Hash: 760787567e1b60d64a3e421ab83ee14a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -507,7 +519,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 765707ca0894152f0b8a6c80e5a59e7a
+      Hash: 3a270426a992ec2ad577db153c0e70f7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -987,7 +999,7 @@ ScriptsOnlyBuild:
     className: CinemachineRecomposer
   - hash:
       serializedVersion: 2
-      Hash: 7050a01ca4b1d5829f77c127b638f9c1
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: parallax
@@ -1009,6 +1021,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalEmitter
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Restart
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
