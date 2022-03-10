@@ -7,16 +7,28 @@ public class timer : MonoBehaviour
 {
  
     public Text timerText;
-
-    public float timeStart = 0 ;
+    private float theTime;
+    public float speed = 1;
 
     void Start()
     {
-        timerText.text = timeStart.ToString("F2");
+        timerText.GetComponent<Text>();
     }
     void Update()
     {
-        timeStart += Time.deltaTime;
-        timerText.text = timeStart.ToString("F2");
+        theTime += Time.deltaTime*speed;
+       
+        string hours = Mathf.Floor((theTime % 216000) / 3600).ToString("00");
+        string minutes = Mathf.Floor((theTime % 3600) / 60).ToString("00");
+        string seconds = (theTime % 60).ToString("00");
+        timerText.text = hours + ":" + minutes + ":" + seconds;
+
+        //timeSec += Time.deltaTime;
+        //    if (timeSec==59)
+        //    {
+        //        timeMin =+1;
+        //        timeSec -= Time.deltaTime;
+        //    }
+        //    timerText.text = timeMin.ToString("f")+":"+ timeSec.ToString("f");
     }
 }

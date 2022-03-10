@@ -6,7 +6,6 @@ ScriptsOnlyBuild:
     - Gun
     - Player
     - Restart
-    - ScoreManager
     - menu
     - pause
     - timer
@@ -39,8 +38,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -53,6 +54,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
     - UnityEngine.UI.Shadow
     - UnityEngine.UI.Text
   sceneClasses:
@@ -131,6 +133,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5792}
     - Class: 114
       Script: {instanceID: 5836}
+    - Class: 114
+      Script: {instanceID: 64244}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -154,6 +158,65 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/menu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1518}
+    - Class: 114
+      Script: {instanceID: 1540}
+    - Class: 114
+      Script: {instanceID: 1774}
+    - Class: 114
+      Script: {instanceID: 2258}
+    - Class: 114
+      Script: {instanceID: 2702}
+    - Class: 114
+      Script: {instanceID: 2882}
+    - Class: 114
+      Script: {instanceID: 3114}
+    - Class: 114
+      Script: {instanceID: 3174}
+    - Class: 114
+      Script: {instanceID: 3376}
+    - Class: 114
+      Script: {instanceID: 3498}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/rules.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -237,7 +300,7 @@ ScriptsOnlyBuild:
     className: CinemachineVolumeSettings
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 600a23b67af3bf4fab6ee0604f6ae43c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: menu
@@ -483,7 +546,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 7338d40094e96dad21371c3eb8600cc5
+      Hash: de4504afcc7e2892d84c09319539b7ac
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: timer
@@ -519,7 +582,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 3a270426a992ec2ad577db153c0e70f7
+      Hash: 4f74452ec7ef174a038712dba589a7d9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -909,12 +972,6 @@ ScriptsOnlyBuild:
     className: CinemachineStateDrivenCamera
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ScoreManager
-  - hash:
-      serializedVersion: 2
       Hash: 87ad3705a58f19c47136728d4a6e9c47
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -1053,7 +1110,7 @@ ScriptsOnlyBuild:
     className: CinemachineFollowZoom
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 9f54e90afea28775ebea5ef289593867
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: pause
@@ -1079,4 +1136,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/menu.unity
   - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/rules.unity
   playerPath: C:/Work/Diplom/ShooterGame/bin/ShooterGame.exe

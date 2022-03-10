@@ -20,23 +20,26 @@ public class Player : MonoBehaviour
     public Text scoreDisplay;
     public Text scoreDisplayPanel;
     public GameObject Panel;
-
+    private Text NameOfPlayer;
+    public Text DisplayName;
+   
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        
+       //  NameOfPlayer = GameObject.Find("NamePlayer").GetComponent<Text>();
+       // NameOfPlayer= FindSceneObjectsOfType(Restart)
     }
     private void Update()
     {
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = moveInput.normalized * speed;
-
+       // DisplayName.text = NameOfPlayer.ToString();
     }
     private void FixedUpdate()
     {
-
+     
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
        
        if (facingRight == false && moveInput.x > 0)

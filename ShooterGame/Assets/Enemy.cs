@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
       
 
     }
-    private void Update()
+    private void FixedUpdate()
 
     {
 
@@ -54,15 +54,17 @@ public class Enemy : MonoBehaviour
         }
         if (player.transform.position.x >transform.position.x)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-        else
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+          transform.eulerAngles = new Vector3(0, 180, 0);
+      }
+      
+     else
+       {
+          transform.eulerAngles = new Vector3(0, 0, 0);
 
-        }
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position,speed*Time.deltaTime);
-
+       }
+       //  Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position,speed*Time.fixedDeltaTime);
+     //   transform.forward = player.transform.position;
 
     }
     public void TakeDamage(int damage)

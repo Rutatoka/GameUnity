@@ -20,9 +20,9 @@ public class Restart : MonoBehaviour
     {
         player.scoreDisplayPanel.text = "" + player.score;
  
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+    }
+    public void StartAgainGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
     }
 }
