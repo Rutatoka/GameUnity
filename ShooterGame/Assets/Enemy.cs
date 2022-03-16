@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     public int health;
     public float speed;
-
+    private Rigidbody2D rb;
     public float timeBtwAtack;
     public float startTimeBtwAtack;
     public int damage;
@@ -18,17 +18,16 @@ public class Enemy : MonoBehaviour
     public float startStopTime;
     public float normalspeed;
    public GameObject effect1;
- 
+    public GameObject target;
 
     private void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         player = FindObjectOfType<Player>();
-      
-
+     
     }
-    private void FixedUpdate()
+    private void Update()
 
     {
 
@@ -46,7 +45,7 @@ public class Enemy : MonoBehaviour
           
             Destroy(gameObject);
             player.Kill();
-            player.scoreDisplay.text = "" + player.score;
+            player.scoreDisplayGame.text = "" + player.score;
            
             //  Instantiate(effect1, transform.position , Quaternion.identity);
 
@@ -62,9 +61,14 @@ public class Enemy : MonoBehaviour
           transform.eulerAngles = new Vector3(0, 0, 0);
 
        }
-       //  Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position,speed*Time.fixedDeltaTime);
-     //   transform.forward = player.transform.position;
+
+       if(player.transform.position.y != transform.position.y)
+        {
+            transform.position = player.transform.position;
+        }
+        //  Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
+        transform.position = Vector2.MoveTowards(rb.position, target.transform.position, speed * Time.deltaTime);
+      
 
     }
     public void TakeDamage(int damage)

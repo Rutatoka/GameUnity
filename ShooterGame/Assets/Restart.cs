@@ -18,8 +18,10 @@ public class Restart : MonoBehaviour
     }
     private void Update()
     {
-        player.scoreDisplayPanel.text = "" + player.score;
- 
+        player.scoreDisplayDeath.text = "" + player.score;
+        player.DisplayNameDeath.text = "" + player.DisplayNameDeath.text;
+
+
     }
     public void StartAgainGame()
     {

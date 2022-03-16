@@ -7,6 +7,19 @@ using UnityEngine.SceneManagement;
 public class pause : MonoBehaviour
 {
     public GameObject Panel;
+    private Player player;
+
+    private void Start()
+    {
+        player = FindObjectOfType<Player>();
+
+    }
+    private void Update()
+    {
+        player.scoreDisplayPause.text = "" + player.score;
+        player.DisplayNamePause.text = "" + player.DisplayNameGame.text;
+
+    }
     public void ExitGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
@@ -21,5 +34,6 @@ public class pause : MonoBehaviour
         Panel.SetActive(false);
         Time.timeScale = 1f;
     }
+   
 
 }

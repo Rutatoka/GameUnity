@@ -12,10 +12,10 @@ public class menu : MonoBehaviour
     public GameObject SaveNameButton;
     public Text PlayerName;
     int saveNameGame = 0;
-    private void Awake()
-    {
-        DontDestroyOnLoad(PlayerName);
-    }
+    //private void Awake()
+    //{
+    //    PlayerName.text = "";
+    //}
   
     private void Update()
     {
@@ -35,20 +35,27 @@ public class menu : MonoBehaviour
         }
 
     }
+ 
+    public void SaveName()
+    {
+        //if (PlayerName.text=="")
+        //{
+            PlayerName.text = inGame.text;
+            saveNameGame = 1;
+        //}
+        //else
+        //{
+          
+       // }
+       
+
+    } 
     public void StartGame()
     {
         
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             Time.timeScale = 1f;
          
-
-    }
-    public void SaveName()
-    {
-
-        PlayerName.text = inGame.text;
-         saveNameGame = 1;
-
 
     }
     public void OpenRules()

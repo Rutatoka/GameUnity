@@ -17,22 +17,32 @@ public class Player : MonoBehaviour
     private Vector2 moveVelocity;
     public Text healthDisplay;
     public int score;
-    public Text scoreDisplay;
-    public Text scoreDisplayPanel;
+    public Text scoreDisplayPause;
+    public Text scoreDisplayGame;
+    public Text scoreDisplayDeath;
     public GameObject Panel;
     private Text NameOfPlayer;
-    public Text DisplayName;
-   
+    public Text DisplayNameGame;
+    public Text DisplayNameDeath;
+    public Text DisplayNamePause;
+
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-       //  NameOfPlayer = GameObject.Find("NamePlayer").GetComponent<Text>();
-       // NameOfPlayer= FindSceneObjectsOfType(Restart)
+         NameOfPlayer = GameObject.Find("NamePlayer").GetComponent<Text>();
+        // NameOfPlayer= FindSceneObjectsOfType(Restart)
+
+        DisplayNameGame.text = "" + NameOfPlayer.text;
+        DisplayNamePause.text = "" + NameOfPlayer.text;
+        DisplayNameDeath.text = "" + NameOfPlayer.text;
+
     }
     private void Update()
     {
+
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = moveInput.normalized * speed;
        // DisplayName.text = NameOfPlayer.ToString();
@@ -70,15 +80,16 @@ public class Player : MonoBehaviour
     }
     void Flip()
     {
-        facingRight = !facingRight;
-        Vector3 Scaler = transform.localScale;
-        Scaler.x *= -1;
-        transform.localScale = Scaler;
+        //facingRight = !facingRight;
+        //Vector3 Scaler = transform.localScale;
+        //Scaler.x *= -1;
+        //transform.localScale = Scaler;
+        transform.eulerAngles = new Vector3(0, 180, 0);
     }
     public void ChangeHealth(int healthValue)
     {
        health += healthValue;
-   //    healthDisplay.text = "-" + health;
+     healthDisplay.text = "" + health;
      //   scoreDisplay.text = "" + score;
     }
     public void Kill()
