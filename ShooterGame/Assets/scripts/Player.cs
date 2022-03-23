@@ -9,23 +9,24 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     private bool facingRight = true;
-
-    public float speed;
-    public int health;
     private Animator anim;
     private Vector2 moveInput;
-    private Vector2 moveVelocity;
-    public Text healthDisplay;
+    private Vector2 moveVelocity;  
+    private Text NameOfPlayer;
+    [Header("controls")]
+    public float speed;
+    public int health;
     public int score;
+
+    [Header("Text")]
+    public Text healthDisplay;
     public Text scoreDisplayPause;
     public Text scoreDisplayGame;
     public Text scoreDisplayDeath;
-    public GameObject Panel;
-    private Text NameOfPlayer;
     public Text DisplayNameGame;
     public Text DisplayNameDeath;
     public Text DisplayNamePause;
-
+    public GameObject PanelDeath;
 
 
     private void Start()
@@ -72,7 +73,7 @@ public class Player : MonoBehaviour
 
         if (health<=0)
         {
-            Panel.SetActive(true);
+            PanelDeath.SetActive(true);
             Destroy(gameObject);
            
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -80,11 +81,11 @@ public class Player : MonoBehaviour
     }
     void Flip()
     {
-        //facingRight = !facingRight;
-        //Vector3 Scaler = transform.localScale;
-        //Scaler.x *= -1;
-        //transform.localScale = Scaler;
-        transform.eulerAngles = new Vector3(0, 180, 0);
+       facingRight = !facingRight;
+       Vector3 Scaler = transform.localScale;
+       Scaler.x *= -1;
+       transform.localScale = Scaler;
+       
     }
     public void ChangeHealth(int healthValue)
     {

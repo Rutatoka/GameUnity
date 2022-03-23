@@ -10,13 +10,14 @@ public class menu : MonoBehaviour
     public InputField inGame;
     public GameObject playButton;
     public GameObject SaveNameButton;
-    public Text PlayerName;
+    private Text PlayerName;
+
     int saveNameGame = 0;
-    //private void Awake()
-    //{
-    //    PlayerName.text = "";
-    //}
-  
+
+    private void Start()
+    {
+        PlayerName = GameObject.Find("NamePlayer").GetComponent<Text>();
+    }
     private void Update()
     {
         if (inGame.text == "")
