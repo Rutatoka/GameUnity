@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2290850293061593223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.0899315, y: -2.9728765, z: 0}
-  m_LocalScale: {x: 0.184768, y: 0.1547432, z: 0.184768}
+  m_LocalScale: {x: 0.27138725, y: 0.2272868, z: 0.27138725}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,13 +95,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a82aaa1d216c3498eaf1c267c22ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
-  lifetime: 0.6
-  distance: 0.2
+  speed: 17
+  lifetime: 2
+  distance: 0
   damage: 1
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 2112
-  effect: {fileID: 1321647695264694755, guid: b63ce8f124f5dc344941b4afbfc9b5eb, type: 3}
-  destroyEffect: {fileID: 1321647695264694755, guid: 3f2f321f0b2e1f9499055811210db148, type: 3}
+  effect: {fileID: 1321647695264694755, guid: 3f2f321f0b2e1f9499055811210db148, type: 3}
+  destroyEffect: {fileID: 1321647695264694755, guid: b63ce8f124f5dc344941b4afbfc9b5eb, type: 3}
   enemyBullet: 0

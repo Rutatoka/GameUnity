@@ -9,17 +9,23 @@ using UnityEngine.SceneManagement;
 public class Restart : MonoBehaviour
 {
 
-    private Player player;
-  
+
+    public Text textScore;
+    public Text textName;
+
+
     private void Start()
     {
-        player = FindObjectOfType<Player>();
+      
        
     }
     private void Update()
     {
-        player.scoreDisplayDeath.text = "" + player.score;
-        player.DisplayNameDeath.text = "" + player.DisplayNameDeath.text;
+        textScore.text = PlayerPrefs.GetInt("Score").ToString();
+        textName.text = PlayerPrefs.GetString("Player");
+
+        //   player.scoreDisplayDeath.text = "" + player.score;
+        // player.DisplayNameDeath.text = "" + player.DisplayNameDeath.text;
 
 
     }

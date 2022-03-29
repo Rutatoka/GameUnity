@@ -13,19 +13,27 @@ public class Player : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 moveVelocity;  
     private Text NameOfPlayer;
+
+    [Header("effects")]
+    public GameObject salveEffect;
+    public GameObject shieldEffect;
+
+    public GameObject shield;
+
     [Header("controls")]
     public float speed;
     public int health;
+    [SerializeField] Text textScore;
+    public Bonus shieldTimer;
     public int score;
-
     [Header("Text")]
     public Text healthDisplay;
-    public Text scoreDisplayPause;
-    public Text scoreDisplayGame;
-    public Text scoreDisplayDeath;
-    public Text DisplayNameGame;
-    public Text DisplayNameDeath;
-    public Text DisplayNamePause;
+ //   public Text scoreDisplayPause;
+  //  public Text scoreDisplayGame;
+ //   public Text scoreDisplayDeath;
+    public Text DisplayName;
+  //  public Text DisplayNameDeath;
+   // public Text DisplayNamePause;
     public GameObject PanelDeath;
 
 
@@ -35,22 +43,24 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
          NameOfPlayer = GameObject.Find("NamePlayer").GetComponent<Text>();
         // NameOfPlayer= FindSceneObjectsOfType(Restart)
-
-        DisplayNameGame.text = "" + NameOfPlayer.text;
-        DisplayNamePause.text = "" + NameOfPlayer.text;
-        DisplayNameDeath.text = "" + NameOfPlayer.text;
+        NameOfPlayer.text = PlayerPrefs.GetString("Player");
+      //  DisplayNameGame.text = "" + NameOfPlayer.text;
+      //  DisplayNamePause.text = "" + NameOfPlayer.text;
+      // DisplayNameDeath.text = "" + NameOfPlayer.text;
 
     }
     private void Update()
     {
-
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = moveInput.normalized * speed;
+       textScore.text = score.ToString();
+        DisplayName.text = name;
        // DisplayName.text = NameOfPlayer.ToString();
     }
     private void FixedUpdate()
     {
-     
+        PlayerPrefs.SetInt("Score", score);
+        PlayerPrefs.SetString("Player", name);
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
        
        if (facingRight == false && moveInput.x > 0)
@@ -74,6 +84,7 @@ public class Player : MonoBehaviour
         if (health<=0)
         {
             PanelDeath.SetActive(true);
+          
             Destroy(gameObject);
            
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -87,14 +98,49 @@ public class Player : MonoBehaviour
        transform.localScale = Scaler;
        
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Salve"))
+        {
+            ChangeHealth(5);
+            Instantiate(salveEffect, other.transform.position, Quaternion.identity);
+            Destroy(other.gameObject);
+        }
+        if (other.CompareTag("Shield"))
+        {
+            if (!shield.activeInHierarchy)
+            {
+            shield.SetActive(true);
+            shieldTimer.gameObject.SetActive(true);
+            shieldTimer.isCooldown = true;
+            Instantiate(shieldEffect, other.transform.position, Quaternion.identity);
+            Destroy(other.gameObject);
+            }
+            else
+            {
+                shieldTimer.ResetTimer();
+                Destroy(other.gameObject);
+            }
+
+           
+        }
+    }
     public void ChangeHealth(int healthValue)
     {
-       health += healthValue;
-     healthDisplay.text = "" + health;
-     //   scoreDisplay.text = "" + score;
+        if (!shield.activeInHierarchy || shield.activeInHierarchy&& healthValue>0)
+        {
+            health += healthValue;
+            healthDisplay.text = "" + health;
+        }
+        else if (shield.activeInHierarchy && healthValue < 0)
+        {
+            shieldTimer.ReduseTime(healthValue);
+        }
+
+        //   scoreDisplay.text = "" + score;
     }
     public void Kill()
     {
-        score++;
-    }
+       score++;
+   }
 }

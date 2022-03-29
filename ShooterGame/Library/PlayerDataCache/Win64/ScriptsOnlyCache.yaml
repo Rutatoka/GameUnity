@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Bonus
     - Bullet
     - DontDestroy
     - Enemy
@@ -13,14 +14,12 @@ ScriptsOnlyBuild:
     - timer
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
-    - Cinemachine.CinemachineComposer
     - Cinemachine.CinemachineConfiner
     - Cinemachine.CinemachinePipeline
     - Cinemachine.CinemachineTransposer
     - Cinemachine.CinemachineVirtualCamera
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
-    - UnityEditor.U2D.Animation.SkinningCachePersistentState
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
     - UnityEditor.U2D.IK.IKGizmos
@@ -36,7 +35,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.CollabProxy.Editor.dll:
     - Unity.Cloud.Collaborate.UserInterface.CollaborateWindow
-    - Unity.Cloud.Collaborate.UserInterface.WindowCache
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
@@ -110,37 +108,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2786}
     - Class: 114
-      Script: {instanceID: 2882}
+      Script: {instanceID: 2884}
     - Class: 114
-      Script: {instanceID: 2926}
+      Script: {instanceID: 2928}
     - Class: 114
-      Script: {instanceID: 2972}
+      Script: {instanceID: 2974}
     - Class: 114
-      Script: {instanceID: 3114}
+      Script: {instanceID: 3116}
     - Class: 114
-      Script: {instanceID: 3142}
+      Script: {instanceID: 3144}
     - Class: 114
-      Script: {instanceID: 3268}
+      Script: {instanceID: 3270}
     - Class: 114
-      Script: {instanceID: 3376}
+      Script: {instanceID: 3378}
     - Class: 114
-      Script: {instanceID: 3498}
+      Script: {instanceID: 3398}
     - Class: 114
-      Script: {instanceID: 4228}
+      Script: {instanceID: 3502}
     - Class: 114
-      Script: {instanceID: 5052}
+      Script: {instanceID: 4232}
     - Class: 114
-      Script: {instanceID: 5762}
+      Script: {instanceID: 5056}
     - Class: 114
-      Script: {instanceID: 5792}
+      Script: {instanceID: 5766}
     - Class: 114
-      Script: {instanceID: 5836}
+      Script: {instanceID: 5840}
     - Class: 114
-      Script: {instanceID: 18278}
+      Script: {instanceID: 18442}
     - Class: 114
-      Script: {instanceID: 18306}
+      Script: {instanceID: 18478}
     - Class: 114
-      Script: {instanceID: 27856}
+      Script: {instanceID: 34128}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -197,17 +195,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2702}
     - Class: 114
-      Script: {instanceID: 2882}
+      Script: {instanceID: 2884}
     - Class: 114
-      Script: {instanceID: 3114}
+      Script: {instanceID: 3116}
     - Class: 114
-      Script: {instanceID: 3174}
+      Script: {instanceID: 3176}
     - Class: 114
-      Script: {instanceID: 3376}
+      Script: {instanceID: 3378}
     - Class: 114
-      Script: {instanceID: 3498}
+      Script: {instanceID: 3502}
     - Class: 114
-      Script: {instanceID: 4766}
+      Script: {instanceID: 4770}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -258,13 +256,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2702}
     - Class: 114
-      Script: {instanceID: 2882}
+      Script: {instanceID: 2884}
     - Class: 114
-      Script: {instanceID: 3114}
+      Script: {instanceID: 3116}
     - Class: 114
-      Script: {instanceID: 3376}
+      Script: {instanceID: 3378}
     - Class: 114
-      Script: {instanceID: 3498}
+      Script: {instanceID: 3502}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -530,6 +528,12 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LidersNames
+  - hash:
+      serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -590,7 +594,7 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 87b1d67b74808e28eb7c51cdd519b4d3
+      Hash: 8ce4b6de179393b3d843ffcb801c6f63
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -666,6 +670,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMesh
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LiderTable
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -1094,7 +1104,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: cb73305b1e9193e01b10512b54b6dcff
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Restart
@@ -1124,7 +1134,7 @@ ScriptsOnlyBuild:
     className: CinemachineFollowZoom
   - hash:
       serializedVersion: 2
-      Hash: 4b4d98854abde5a8ffbc33ff222f8009
+      Hash: 09827730ec78c2d74c9aa050eaeb125d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: pause
@@ -1148,10 +1158,10 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 14ee6cbdbce3776d2b803eb5c28c82ec
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: LiderTable
+    className: Bonus
   platform: 19
   scenePathNames:
   - Assets/Scenes/menu.unity

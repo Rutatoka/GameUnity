@@ -39,16 +39,8 @@ public class menu : MonoBehaviour
  
     public void SaveName()
     {
-        //if (PlayerName.text=="")
-        //{
             PlayerName.text = inGame.text;
             saveNameGame = 1;
-        //}
-        //else
-        //{
-          
-       // }
-       
 
     } 
     public void StartGame()

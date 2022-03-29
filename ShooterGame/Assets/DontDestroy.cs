@@ -5,9 +5,13 @@ using UnityEngine;
 public class DontDestroy : MonoBehaviour
 {
     private static DontDestroy instance;
-    
-        void Awake()
-    {
+   
+    private Player player;
+ 
+
+
+    void Awake()
+     {
         if (instance!=null)
         {
             Destroy(gameObject);
@@ -18,8 +22,9 @@ public class DontDestroy : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
             
-    }
+     }
+   
 
-    
+ 
 
 }

@@ -45,8 +45,9 @@ public class Enemy : MonoBehaviour
           
             Destroy(gameObject);
             player.Kill();
-            player.scoreDisplayGame.text = "" + player.score;
            
+            // player.scoreDisplayGame.text = "" + player.score;
+           // PlayerPrefs.SetInt("Score", score);
             //  Instantiate(effect1, transform.position , Quaternion.identity);
 
 
