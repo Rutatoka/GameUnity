@@ -10,7 +10,7 @@ public class pause : MonoBehaviour
 {
     public GameObject PanelPause;
     public GameObject PanelDeath;
-    private Player player;
+   // private Player player;
     public Text textScore;
     public Text textName;
 
@@ -21,7 +21,7 @@ public class pause : MonoBehaviour
         //PanelPause = GameObject.Find("pausePanel");
        
       
-        player = FindObjectOfType<Player>();
+     //   player = FindObjectOfType<Player>();
 
     }
 
@@ -29,8 +29,17 @@ public class pause : MonoBehaviour
     {
         //   player.scoreDisplayPause.text = "" + player.score;
         textScore.text = PlayerPrefs.GetInt("Score").ToString();
-        textName.text = PlayerPrefs.GetString("Player");
-     //   player.DisplayNamePause.text = "" + player.DisplayNameGame.text;
+       
+        if (!PlayerPrefs.HasKey("playerName"))
+        {
+            PlayerPrefs.SetString("playerName", "NoName");
+        }
+
+        else
+        {
+            textName.text = PlayerPrefs.GetString("playerName");
+        }
+        //   player.DisplayNamePause.text = "" + player.DisplayNameGame.text;
         if (Input.GetKey(KeyCode.Space))
         {
             PauseGame();

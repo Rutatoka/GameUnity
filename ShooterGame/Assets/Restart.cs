@@ -10,20 +10,31 @@ public class Restart : MonoBehaviour
 {
 
 
-    public Text textScore;
-    public Text textName;
-
+    public Text[] textScore;
+    public Text[] textName;
+    public bool[] isFull;
+ //   private int[] checkLiders;
 
     private void Start()
     {
-      
-       
+
+    
     }
     private void Update()
     {
-        textScore.text = PlayerPrefs.GetInt("Score").ToString();
-        textName.text = PlayerPrefs.GetString("Player");
+       
+        for (int i =0; i<textScore.Length;i++)
+        {
 
+            if (isFull[i]==false)
+            {
+                isFull[i] = true;
+                textScore[i].text = PlayerPrefs.GetInt("Score").ToString();
+                textName[i].text = PlayerPrefs.GetString("playerName");
+                break;
+            }
+
+        }
         //   player.scoreDisplayDeath.text = "" + player.score;
         // player.DisplayNameDeath.text = "" + player.DisplayNameDeath.text;
 

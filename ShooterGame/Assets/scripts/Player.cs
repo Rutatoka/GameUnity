@@ -23,10 +23,11 @@ public class Player : MonoBehaviour
     [Header("controls")]
     public float speed;
     public int health;
-    [SerializeField] Text textScore;
+ 
     public Bonus shieldTimer;
     public int score;
-    [Header("Text")]
+    [Header("Text")] 
+    public Text textScore;
     public Text healthDisplay;
  //   public Text scoreDisplayPause;
   //  public Text scoreDisplayGame;
@@ -41,9 +42,9 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-         NameOfPlayer = GameObject.Find("NamePlayer").GetComponent<Text>();
+       //  NameOfPlayer = GameObject.Find("NamePlayer").GetComponent<Text>();
         // NameOfPlayer= FindSceneObjectsOfType(Restart)
-        NameOfPlayer.text = PlayerPrefs.GetString("Player");
+     //   NameOfPlayer.text = PlayerPrefs.GetString("playerName");
       //  DisplayNameGame.text = "" + NameOfPlayer.text;
       //  DisplayNamePause.text = "" + NameOfPlayer.text;
       // DisplayNameDeath.text = "" + NameOfPlayer.text;
@@ -53,14 +54,23 @@ public class Player : MonoBehaviour
     {
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = moveInput.normalized * speed;
-       textScore.text = score.ToString();
-        DisplayName.text = name;
-       // DisplayName.text = NameOfPlayer.ToString();
+
+        PlayerPrefs.SetInt("Score", score);
+        if (!PlayerPrefs.HasKey("playerName"))
+        {
+            PlayerPrefs.SetString("playerName", "NoName");
+        }
+
+        else
+        {
+            DisplayName.text = PlayerPrefs.GetString("playerName");
+        }
+        // DisplayName.text = NameOfPlayer.ToString();
     }
     private void FixedUpdate()
     {
-        PlayerPrefs.SetInt("Score", score);
-        PlayerPrefs.SetString("Player", name);
+      //  PlayerPrefs.SetInt("Score", score);
+      //  PlayerPrefs.SetString("Player", name);
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
        
        if (facingRight == false && moveInput.x > 0)
@@ -141,6 +151,10 @@ public class Player : MonoBehaviour
     }
     public void Kill()
     {
-       score++;
-   }
+         score++;
+        textScore.text = PlayerPrefs.GetInt("Score").ToString();
+       
+ 
+
+    }
 }

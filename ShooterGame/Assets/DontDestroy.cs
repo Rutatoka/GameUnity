@@ -6,23 +6,23 @@ public class DontDestroy : MonoBehaviour
 {
     private static DontDestroy instance;
    
-    private Player player;
+  //  private Player player;
  
 
 
-    void Awake()
-     {
-        if (instance!=null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+    //void Awake()
+    // {
+    //    if (instance!=null)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //    else
+    //    {
+    //        instance = this;
+    //        DontDestroyOnLoad(gameObject);
+    //    }
             
-     }
+     //}
    
 
  

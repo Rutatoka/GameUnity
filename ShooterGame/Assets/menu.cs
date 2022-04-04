@@ -10,16 +10,27 @@ public class menu : MonoBehaviour
     public InputField inGame;
     public GameObject playButton;
     public GameObject SaveNameButton;
-    private Text PlayerName;
+    public Text PlayerName;
+    //  private string namePlayer;
+
 
     int saveNameGame = 0;
 
     private void Start()
     {
-        PlayerName = GameObject.Find("NamePlayer").GetComponent<Text>();
+
+      //  PlayerName.text = inGame.text.ToString();
+        inGame.GetComponent<Text>();
+        //PlayerPrefs.SetString("playerName", inGame.text.ToString());
+       
+        //     PlayerPrefs.SetString("playerName", namePlayer);
+
+        //   PlayerPrefs.Save();
     }
     private void Update()
-    {
+    { 
+        
+       // PlayerName.text = PlayerPrefs.GetString("playerName");
         if (inGame.text == "")
         {
             SaveNameButton.GetComponent<Button>().interactable = false;
@@ -27,7 +38,14 @@ public class menu : MonoBehaviour
         }
         else
         {
+           
             SaveNameButton.GetComponent<Button>().interactable = true;
+           
+            PlayerPrefs.SetString("playerName", inGame.text.ToString());
+           
+
+        
+
             if (saveNameGame==1)
             {
                 playButton.GetComponent<Button>().interactable = true;
@@ -39,9 +57,13 @@ public class menu : MonoBehaviour
  
     public void SaveName()
     {
-            PlayerName.text = inGame.text;
-            saveNameGame = 1;
 
+        // PlayerName.text = PlayerPrefs.GetString("playerName");
+        //   print(PlayerPrefs.GetString("playerName"));
+        PlayerName.text = PlayerPrefs.GetString("playerName");
+        Debug.Log(inGame.text.ToString());
+            saveNameGame = 1;
+     
     } 
     public void StartGame()
     {
