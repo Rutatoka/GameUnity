@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 moveVelocity;  
     private Text NameOfPlayer;
+    private Text IdOfPlayer;
+
 
     [Header("effects")]
     public GameObject salveEffect;
@@ -32,9 +34,10 @@ public class Player : MonoBehaviour
  //   public Text scoreDisplayPause;
   //  public Text scoreDisplayGame;
  //   public Text scoreDisplayDeath;
-    public Text DisplayName;
-  //  public Text DisplayNameDeath;
-   // public Text DisplayNamePause;
+  public Text DisplayName;
+  //public Text DisplayID;
+  
+    // public Text DisplayNamePause;
     public GameObject PanelDeath;
 
 
@@ -42,12 +45,15 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-       //  NameOfPlayer = GameObject.Find("NamePlayer").GetComponent<Text>();
+        //NameOfPlayer = GameObject.Find("NamePlayer").GetComponent<Text>();
+        //IdOfPlayer = GameObject.Find("IdPlayer").GetComponent<Text>();
+
         // NameOfPlayer= FindSceneObjectsOfType(Restart)
-     //   NameOfPlayer.text = PlayerPrefs.GetString("playerName");
-      //  DisplayNameGame.text = "" + NameOfPlayer.text;
-      //  DisplayNamePause.text = "" + NameOfPlayer.text;
-      // DisplayNameDeath.text = "" + NameOfPlayer.text;
+        DisplayName.text = PlayerPrefs.GetString("playerName");
+      //  textScore.text = PlayerPrefs.GetInt("Score").ToString();
+        //DisplayName.text = NameOfPlayer.text;
+        //DisplayID.text = IdOfPlayer.text;
+        // DisplayNameDeath.text = "" + NameOfPlayer.text;
 
     }
     private void Update()
@@ -56,15 +62,15 @@ public class Player : MonoBehaviour
         moveVelocity = moveInput.normalized * speed;
 
         PlayerPrefs.SetInt("Score", score);
-        if (!PlayerPrefs.HasKey("playerName"))
-        {
-            PlayerPrefs.SetString("playerName", "NoName");
-        }
+        //if (!PlayerPrefs.HasKey("playerName"))
+        //{
+        //    PlayerPrefs.SetString("playerName", "NoName");
+        //}
 
-        else
-        {
-            DisplayName.text = PlayerPrefs.GetString("playerName");
-        }
+        //else
+        //{
+        //    DisplayName.text = PlayerPrefs.GetString("playerName");
+        //}
         // DisplayName.text = NameOfPlayer.ToString();
     }
     private void FixedUpdate()
