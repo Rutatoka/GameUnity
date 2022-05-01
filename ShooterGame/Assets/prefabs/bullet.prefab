@@ -80,7 +80,7 @@ SpriteRenderer:
   m_Size: {x: 6.18, y: 3.7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &-1772548055546296929
@@ -101,7 +101,7 @@ MonoBehaviour:
   damage: 1
   whatIsSolid:
     serializedVersion: 2
-    m_Bits: 2112
+    m_Bits: 2368
   effect: {fileID: 1321647695264694755, guid: b63ce8f124f5dc344941b4afbfc9b5eb, type: 3}
   destroyEffect: {fileID: 1321647695264694755, guid: 3f2f321f0b2e1f9499055811210db148, type: 3}
   enemyBullet: 0

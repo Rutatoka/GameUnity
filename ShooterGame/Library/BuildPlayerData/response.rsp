@@ -8,6 +8,7 @@
 -a="C:\Work\Diplom\ShooterGame\Library\PlayerScriptAssemblies\Unity.Mathematics.dll"
 -a="C:\Work\Diplom\ShooterGame\Library\PlayerScriptAssemblies\Unity.2D.IK.Runtime.dll"
 -a="C:\Work\Diplom\ShooterGame\Library\PlayerScriptAssemblies\Cinemachine.dll"
+-a="C:\Work\Diplom\ShooterGame\Library\PlayerScriptAssemblies\Unity.Postprocessing.Runtime.dll"
 -a="C:\Work\Diplom\ShooterGame\Library\PlayerScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll"
 -a="C:\Work\Diplom\ShooterGame\Library\PlayerScriptAssemblies\Unity.2D.Animation.Runtime.dll"
 -a="C:\Work\Diplom\ShooterGame\Library\PlayerScriptAssemblies\Unity.2D.Common.Runtime.dll"

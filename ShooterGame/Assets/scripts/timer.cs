@@ -17,18 +17,9 @@ public class timer : MonoBehaviour
     void Update()
     {
         theTime += Time.deltaTime*speed;
-       
         string hours = Mathf.Floor((theTime % 216000) / 3600).ToString("00");
         string minutes = Mathf.Floor((theTime % 3600) / 60).ToString("00");
         string seconds = (theTime % 60).ToString("00");
         timerText.text = hours + ":" + minutes + ":" + seconds;
-
-        //timeSec += Time.deltaTime;
-        //    if (timeSec==59)
-        //    {
-        //        timeMin =+1;
-        //        timeSec -= Time.deltaTime;
-        //    }
-        //    timerText.text = timeMin.ToString("f")+":"+ timeSec.ToString("f");
     }
 }

@@ -33,7 +33,8 @@ public class pause : MonoBehaviour
      //   textScore.text = PlayerPrefs.GetInt("Score").ToString();
 
     }
-
+   
+ 
     private void Update()
     {
         

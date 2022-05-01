@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectColor: {r: 0.990566, g: 0.990566, b: 0.990566, a: 0.5}
   m_EffectDistance: {x: 2.73, y: -2.8}
   m_UseGraphicAlpha: 1
 --- !u!114 &7899150
@@ -709,6 +709,7 @@ MonoBehaviour:
   inGame: {fileID: 0}
   playButton: {fileID: 0}
   SaveNameButton: {fileID: 0}
+  PlayerName: {fileID: 0}
 --- !u!1 &1038657390
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,6 +723,7 @@ GameObject:
   - component: {fileID: 1038657394}
   - component: {fileID: 1038657393}
   - component: {fileID: 1038657392}
+  - component: {fileID: 1038657396}
   m_Layer: 5
   m_Name: playButton
   m_TagString: Untagged
@@ -785,8 +787,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 0.47668213, g: 0.53759277, b: 0.9811321, a: 0.5372549}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0.5686275}
     m_PressedColor: {r: 0.4245283, g: 0.2743414, b: 0.2743414, a: 1}
     m_SelectedColor: {r: 0.07186719, g: 0.24703431, b: 0.8018868, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -833,7 +835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: cb8dadfef9f57e14b906f5f41ccf9ca5, type: 3}
-  m_Color: {r: 0.3764706, g: 0.39607844, b: 0.6039216, a: 0.87058824}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.87058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -858,6 +860,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038657390}
   m_CullTransparentMesh: 1
+--- !u!114 &1038657396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038657390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03bdb16775be4e4eba3ffa631438d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 
+  header: 
+  cursorTexture: {fileID: 2800000, guid: 6de789f2d3bfddc43875dd3b9bc84623, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &1375652515
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    public GameObject floatingDamage;
     public int health;
     public float speed;
     private Rigidbody2D rb;
@@ -15,16 +16,18 @@ public class Enemy : MonoBehaviour
     private Animator anim;
     private Player player;
     private float stopTime;
+    private AddRoom room;
     public float startStopTime;
     public float normalspeed;
    public GameObject effect1;
-    public GameObject target;
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         player = FindObjectOfType<Player>();
+        room = GetComponentInParent<AddRoom>();
      
     }
     private void Update()
@@ -44,6 +47,7 @@ public class Enemy : MonoBehaviour
         { 
           
             Destroy(gameObject);
+            room.enemies.Remove(gameObject);
             player.Kill();
            
             // player.scoreDisplayGame.text = "" + player.score;
@@ -68,7 +72,7 @@ public class Enemy : MonoBehaviour
             transform.position = player.transform.position;
         }
         //  Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
-        transform.position = Vector2.MoveTowards(rb.position, target.transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(rb.position, player.transform.position, speed * Time.deltaTime);
       
 
     }
@@ -76,6 +80,9 @@ public class Enemy : MonoBehaviour
     {
         stopTime = startStopTime;  
         health -= damage;
+        Vector2 damagePos = new Vector2(transform.position.x, transform.position.y + 2.75f);
+        Instantiate(floatingDamage, damagePos, Quaternion.identity);
+        floatingDamage.GetComponentInChildren<FloatingDamaeg>().damage = damage;
       //  Instantiate(effect1, transform.position, Quaternion.identity);
     }
     public void OnTriggerStay2D(Collider2D other)

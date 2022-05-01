@@ -27,18 +27,24 @@ public class Player : MonoBehaviour
     public int health;
  
     public Bonus shieldTimer;
-    public int score;
+    private int score;
     [Header("Text")] 
     public Text textScore;
     public Text healthDisplay;
  //   public Text scoreDisplayPause;
   //  public Text scoreDisplayGame;
  //   public Text scoreDisplayDeath;
-  public Text DisplayName;
-  //public Text DisplayID;
-  
-    // public Text DisplayNamePause;
+    public Text DisplayName;
     public GameObject PanelDeath;
+ 
+
+    //public Text DisplayID;
+    [Header("Key")]
+    public GameObject keyIcon;
+    public GameObject keyEffect;
+    // public Text DisplayNamePause;
+
+    private bool keyButtonPush;
 
 
     private void Start()
@@ -79,23 +85,23 @@ public class Player : MonoBehaviour
       //  PlayerPrefs.SetString("Player", name);
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
        
-       if (facingRight == false && moveInput.x > 0)
+       if (facingRight == false && moveInput.x > 0 )
        {
            Flip();
        }
-       else if (facingRight == true && moveInput.x < 0)
-      {
+       else if (facingRight == true && moveInput.x < 0 )
+       {
        Flip();
   }
-           if (moveInput.x==0)
+           if (moveInput.x==0 && moveInput.y == 0 )
        {
           anim.SetBool("isRunning", false);
        }
         
         else
-     {
+        {
           anim.SetBool("isRunning", true);
-      }
+        }
 
         if (health<=0)
         {
@@ -122,7 +128,7 @@ public class Player : MonoBehaviour
             Instantiate(salveEffect, other.transform.position, Quaternion.identity);
             Destroy(other.gameObject);
         }
-        if (other.CompareTag("Shield"))
+       else if (other.CompareTag("Shield"))
         {
             if (!shield.activeInHierarchy)
             {
@@ -137,8 +143,47 @@ public class Player : MonoBehaviour
                 shieldTimer.ResetTimer();
                 Destroy(other.gameObject);
             }
+        }
+        else if (other.CompareTag("Key"))
+        {
+            if (keyIcon.activeInHierarchy)
+            {
 
-           
+            }
+            else if (!keyIcon.activeInHierarchy)
+            {
+            keyIcon.SetActive(true);
+            Destroy(other.gameObject);
+            }
+         
+        }
+
+    }
+
+    //public void OnKeyButtonDown()
+    //{
+        
+    //    keyButtonPush = !keyButtonPush;
+    //}
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        //if (Input.GetKey(KeyCode.E))
+        //{
+        //    OnKeyButtonDown();
+        //}//&& keyButtonPush
+        if (other.CompareTag("Door") && keyIcon.activeInHierarchy)
+        {
+            Instantiate(keyEffect, other.transform.position, Quaternion.identity);
+            keyIcon.SetActive(false);
+            other.gameObject.SetActive(false);
+            //  keyButtonPush = false;
+
+        }
+        if (other.CompareTag("Exit"))
+        {
+            Destroy(gameObject);
+            Time.timeScale = 0f;
+            PanelDeath.SetActive(true);
         }
     }
     public void ChangeHealth(int healthValue)
@@ -160,7 +205,6 @@ public class Player : MonoBehaviour
          score++;
         textScore.text = PlayerPrefs.GetInt("Score").ToString();
        
- 
 
     }
 }

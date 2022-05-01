@@ -30,7 +30,12 @@ public class Bullet : MonoBehaviour
                 Instantiate(effect, transform.position, Quaternion.identity);
                 DestroyBullet();
             }
-          
+            if (hitInfo.collider.CompareTag("falls"))
+            {
+               
+                Instantiate(effect, transform.position, Quaternion.identity);
+                DestroyBullet();
+            }
             if (hitInfo.collider.CompareTag("Player") && enemyBullet)
             {
                 hitInfo.collider.GetComponent<Player>().ChangeHealth(-damage);

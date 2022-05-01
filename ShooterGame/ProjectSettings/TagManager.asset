@@ -8,6 +8,14 @@ TagManager:
   - deathPlayer
   - Salve
   - Shield
+  - Exit
+  - falls
+  - RoomPoint
+  - Rooms
+  - Block
+  - Wall
+  - Door
+  - Key
   layers:
   - Default
   - TransparentFX
@@ -21,7 +29,7 @@ TagManager:
   - shadow
   - Player
   - enemy
-  - 
+  - postPriccesing
   - 
   - 
   - 

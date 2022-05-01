@@ -98,10 +98,10 @@ MonoBehaviour:
   speed: 17
   lifetime: 2
   distance: 0
-  damage: 1
+  damage: 10
   whatIsSolid:
     serializedVersion: 2
-    m_Bits: 2112
+    m_Bits: 2368
   effect: {fileID: 1321647695264694755, guid: 3f2f321f0b2e1f9499055811210db148, type: 3}
-  destroyEffect: {fileID: 1321647695264694755, guid: b63ce8f124f5dc344941b4afbfc9b5eb, type: 3}
+  destroyEffect: {fileID: 1321647695264694755, guid: 2202b5ad32e71734caba0e80c21dd246, type: 3}
   enemyBullet: 0

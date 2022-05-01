@@ -24,10 +24,12 @@ public class Restart : MonoBehaviour
     public Text[] textScore;
     public Text[] textName;
     public bool[] isFull;
+   
  //   private int[] checkLiders;
 
     private void Start()
     {
+
         var score = PlayerPrefs.GetInt("Score");
         var name = PlayerPrefs.GetString("playerName");
 
@@ -36,10 +38,11 @@ public class Restart : MonoBehaviour
         var table = GetScoreTable();
         
         
-        for (int i =0; i<textScore.Length && i < table.table.Count;i++) {
+        for (int i =0; i < table.table.Count;i++) {
 
             textScore[i].text =table.table[i].score.ToString();
             textName[i].text = table.table[i].name;
+            
         }
         //   player.scoreDisplayDeath.text = "" + player.score;
         // player.DisplayNameDeath.text = "" + player.DisplayNameDeath.text;
@@ -55,8 +58,7 @@ public class Restart : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
         Time.timeScale = 1f;
     }
-    
-    
+
     private void AddToTable( string playername, int score )
     {
         ScoreTable scoreTable = GetScoreTable(); 
@@ -64,8 +66,9 @@ public class Restart : MonoBehaviour
 
         if (index >= 0) {
             var prevScore = scoreTable.table[index].score;
-            if ( score > prevScore )
+            if ( score > prevScore|| score==0 )
             {
+             
                 scoreTable.table[index].score = score;
             }
         }
@@ -93,6 +96,29 @@ public class Restart : MonoBehaviour
 
         return scoreTable;
     }
-    
-    
+
+    public void ClearNames()
+    {
+        //for (int i = 0; i < dataBase.ItemsBD.Count; i++)
+        //{
+        //    PlayerName.text =  dataBase.ItemsBD[Random.Range(0, dataBase.ItemsBD.Count)].namePlayer;
+        //    PlayerID.text =  dataBase.ItemsBD[Random.Range(0, dataBase.ItemsBD.Count)].id.ToString();
+        //}
+
+   
+        var table = GetScoreTable();
+        PlayerPrefs.DeleteKey("playerTable");
+
+        PlayerPrefs.DeleteKey("Score");
+     //   PlayerPrefs.DeleteKey("playerName");
+
+        //table = null;
+        for (int i = 0;  i < textScore.Length; i++)
+        {
+
+            textScore[i].text = " ";
+            textName[i].text = " ";
+
+        }
+    }
 }

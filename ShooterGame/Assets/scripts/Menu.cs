@@ -11,10 +11,14 @@ public class Menu : MonoBehaviour
     public GameObject playButton;
    public GameObject SaveNameButton;
     public Text PlayerName;
+    public Slider slider;
+    public GameObject loadingScene;
+    public int levelToLoad;
+
     //public Text PlayerID;
     //public Text PlayerNameDont;
     //public Text PlayerIDDont;
-  //  public PlayerInfo dataBase;
+    //  public PlayerInfo dataBase;
 
     //  private string namePlayer;
 
@@ -89,9 +93,22 @@ public class Menu : MonoBehaviour
     public void StartGame()
     {
         
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+         //   SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             Time.timeScale = 1f;
-         
+            StartCoroutine(LoadingScreenOnFade());
+
+    }
+    IEnumerator LoadingScreenOnFade()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(levelToLoad);
+        loadingScene.SetActive(true);
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+            slider.value = progress;
+            yield return null;
+        }
 
     }
     public void OpenRules()

@@ -32,6 +32,7 @@ public class Gun : MonoBehaviour
 
         if (gunType == GunType.Default)
         {
+            
             difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
            
@@ -50,13 +51,11 @@ public class Gun : MonoBehaviour
 
                 Shoot();
             }
-         
         }
      else
            {
                 timeBtfShoths -= Time.deltaTime;
            }
-    
     }
     public void Shoot()
     {
