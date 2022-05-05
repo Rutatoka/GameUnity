@@ -35,6 +35,9 @@ TextureImporter:
   - first:
       213: 7018385267601350384
     second: Hero_10
+  - first:
+      213: 1917320343087086255
+    second: Hero_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -342,7 +345,7 @@ TextureImporter:
         width: 176
         height: 78
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -350,6 +353,27 @@ TextureImporter:
       bones: []
       spriteID: 0fe96344730566160800000000000000
       internalID: 7018385267601350384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_11
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 2419
+        width: 1165
+        height: 1432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faaf55291b0bb9a10800000000000000
+      internalID: 1917320343087086255
       vertices: []
       indices: 
       edges: []

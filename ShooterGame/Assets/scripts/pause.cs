@@ -15,6 +15,11 @@ public class pause : MonoBehaviour
    // private Player player;
     public Text textScore;
     public Text textName;
+    //public AudioClip[] mainSoundAndMenu;
+    public AudioClip mainSound;
+
+    private AudioSource audioSource;
+
     //public Text textID;
     //private Text NameOfPlayer;
     //private Text IdOfPlayer;
@@ -23,6 +28,8 @@ public class pause : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         //  player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         //PanelDeath = GameObject.Find("deathPlayer");
         //PanelPause = GameObject.Find("pausePanel");
@@ -30,11 +37,14 @@ public class pause : MonoBehaviour
         // textID.text = player.DisplayID.text;
         //NameOfPlayer = GameObject.Find("NamePlayer").GetComponent<Text>();
         //IdOfPlayer = GameObject.Find("IdPlayer").GetComponent<Text>();
-     //   textScore.text = PlayerPrefs.GetInt("Score").ToString();
+        //   textScore.text = PlayerPrefs.GetInt("Score").ToString();
+        audioSource.clip = mainSound;
+        // audioSource.Play();
 
+        audioSource.Play();
     }
-   
- 
+
+
     private void Update()
     {
         
@@ -52,10 +62,11 @@ public class pause : MonoBehaviour
             textScore.text = PlayerPrefs.GetInt("Score").ToString();
         }
         //   player.DisplayNamePause.text = "" + player.DisplayNameGame.text;
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space)&& !PanelDeath.activeInHierarchy)
         {
             PauseGame();
         }
+
     }
     public void ExitGamePanel()
     { 
@@ -73,11 +84,17 @@ public class pause : MonoBehaviour
     }
     public void PauseGame()
     {
+        //audioSource.Pause();
+      //  audioSource.clip= menuSound;
+     // audioSource.Pause();
         PanelPause.SetActive(true);
         Time.timeScale = 0f;
     }
     public void ResetGame()
     {
+       // audioSource.Play();
+      //  audioSource.clip = mainSound;
+      //  audioSource.Play();
         PanelPause.SetActive(false);
         Time.timeScale = 1f;
     }

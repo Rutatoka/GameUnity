@@ -8,6 +8,8 @@ public class AddRoom : MonoBehaviour
     public GameObject[] walls;
     public GameObject wallEffect;
     public GameObject door;
+    public GameObject soundDoor;
+
     [Header("Enemies")]
     public GameObject[] enemyTypes;
     public Transform[] enemySpawners;
@@ -19,9 +21,12 @@ public class AddRoom : MonoBehaviour
     private VariableRooms variants;
     private bool spawned;
     private bool wallDestroyed;
-    
+    private AudioSource audioSource;
+
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         variants = GameObject.FindGameObjectWithTag("Rooms").GetComponent<VariableRooms>();
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -76,6 +81,8 @@ public class AddRoom : MonoBehaviour
             if (wall != null && wall.transform.childCount!=0)
             {
                 Instantiate(wallEffect, wall.transform.position, Quaternion.identity);
+                Instantiate(soundDoor, transform.position, Quaternion.identity);
+
                 Destroy(wall);
 
             }

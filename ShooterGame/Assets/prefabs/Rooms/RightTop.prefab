@@ -826,6 +826,7 @@ MonoBehaviour:
   - {fileID: 1149821049452624938}
   wallEffect: {fileID: 1321647695264694755, guid: 4cd30ca177fad1b4a8e635225490b725, type: 3}
   door: {fileID: 0}
+  soundDoor: {fileID: 5549419673485373345, guid: ac2decd908490e3409f28f3889dad0c6, type: 3}
   enemyTypes:
   - {fileID: 7609422921470939560, guid: c9bcbfe9468515a41a8c3559d3f4709a, type: 3}
   - {fileID: 7609422921470939560, guid: 424e0d04fbfa09942bfbe046008738be, type: 3}

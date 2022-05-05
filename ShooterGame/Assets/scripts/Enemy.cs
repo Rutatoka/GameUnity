@@ -20,6 +20,10 @@ public class Enemy : MonoBehaviour
     public float startStopTime;
     public float normalspeed;
    public GameObject effect1;
+    public GameObject soundHitHero;
+    public GameObject soundDieGhost;
+    public GameObject soundDieGrib;
+
 
 
     private void Start()
@@ -44,14 +48,27 @@ public class Enemy : MonoBehaviour
             stopTime -= Time.deltaTime;
         }
         if (health <= 0)
-        { 
-          
+        {
+            if (gameObject.CompareTag("EnemyGrib"))
+            {
             Destroy(gameObject);
             room.enemies.Remove(gameObject);
-            player.Kill();
-           
+                Instantiate(soundDieGrib, transform.position, Quaternion.identity);
+
+                player.Kill();
+            }
+            else if (gameObject.CompareTag("EnemyGhost"))
+            {
+                Destroy(gameObject);
+                room.enemies.Remove(gameObject);
+                Instantiate(soundDieGhost, transform.position, Quaternion.identity);
+
+                player.Kill();
+            }
+
+
             // player.scoreDisplayGame.text = "" + player.score;
-           // PlayerPrefs.SetInt("Score", score);
+            // PlayerPrefs.SetInt("Score", score);
             //  Instantiate(effect1, transform.position , Quaternion.identity);
 
 
@@ -92,6 +109,7 @@ public class Enemy : MonoBehaviour
             if (timeBtwAtack<=0)
             {
                 anim.SetTrigger("attackEnemy");
+
             }
             else
             {
@@ -102,6 +120,9 @@ public class Enemy : MonoBehaviour
     public void OnEnemyAttack() {
     Instantiate(effect1, player.transform.position, Quaternion.identity);
         player.health -= damage;
+       // int rand = Random.Range(0, soundHitHero.Length);
+        Instantiate(soundHitHero, transform.position, Quaternion.identity);
+
         player.healthDisplay.text = ""+player.health;
         timeBtwAtack = startTimeBtwAtack;
     }

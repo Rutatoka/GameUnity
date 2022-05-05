@@ -11,32 +11,43 @@ public class Player : MonoBehaviour
     private bool facingRight = true;
     private Animator anim;
     private Vector2 moveInput;
-    private Vector2 moveVelocity;  
-    private Text NameOfPlayer;
-    private Text IdOfPlayer;
+    private Vector2 moveVelocity;
+    //private Text NameOfPlayer;
+    //private Text IdOfPlayer;
 
 
     [Header("effects")]
     public GameObject salveEffect;
     public GameObject shieldEffect;
+    public AudioClip[] soundStep;
+    public GameObject soundSalve;
+    public GameObject soundShield;
+    public GameObject soundKey;
+    public GameObject soundDoor;
+
+
+
+
+    //   public GameObject soundHit2;
+    private AudioSource audioSource;
 
     public GameObject shield;
 
     [Header("controls")]
     public float speed;
     public int health;
- 
+
     public Bonus shieldTimer;
     private int score;
-    [Header("Text")] 
+    [Header("Text")]
     public Text textScore;
     public Text healthDisplay;
- //   public Text scoreDisplayPause;
-  //  public Text scoreDisplayGame;
- //   public Text scoreDisplayDeath;
+    //   public Text scoreDisplayPause;
+    //  public Text scoreDisplayGame;
+    //   public Text scoreDisplayDeath;
     public Text DisplayName;
     public GameObject PanelDeath;
- 
+
 
     //public Text DisplayID;
     [Header("Key")]
@@ -49,14 +60,16 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         //NameOfPlayer = GameObject.Find("NamePlayer").GetComponent<Text>();
         //IdOfPlayer = GameObject.Find("IdPlayer").GetComponent<Text>();
+        healthDisplay.text = "" + health;
 
         // NameOfPlayer= FindSceneObjectsOfType(Restart)
         DisplayName.text = PlayerPrefs.GetString("playerName");
-      //  textScore.text = PlayerPrefs.GetInt("Score").ToString();
+        //  textScore.text = PlayerPrefs.GetInt("Score").ToString();
         //DisplayName.text = NameOfPlayer.text;
         //DisplayID.text = IdOfPlayer.text;
         // DisplayNameDeath.text = "" + NameOfPlayer.text;
@@ -64,6 +77,16 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        if (health >= 20)
+        {
+            health = 20;
+            healthDisplay.text = "" + health;
+
+        }
+        if (!shield.activeInHierarchy)
+        {
+            speed = 8;
+        }
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = moveInput.normalized * speed;
 
@@ -81,44 +104,49 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-      //  PlayerPrefs.SetInt("Score", score);
-      //  PlayerPrefs.SetString("Player", name);
+        //  PlayerPrefs.SetInt("Score", score);
+        //  PlayerPrefs.SetString("Player", name);
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
-       
-       if (facingRight == false && moveInput.x > 0 )
-       {
-           Flip();
-       }
-       else if (facingRight == true && moveInput.x < 0 )
-       {
-       Flip();
-  }
-           if (moveInput.x==0 && moveInput.y == 0 )
-       {
-          anim.SetBool("isRunning", false);
-       }
-        
-        else
+
+        if (facingRight == false && moveInput.x > 0)
         {
-          anim.SetBool("isRunning", true);
+            Flip();
+        }
+        else if (facingRight == true && moveInput.x < 0)
+        {
+            Flip();
+        }
+        if (moveInput.x == 0 && moveInput.y == 0)
+        {
+            anim.SetBool("isRunning", false);
         }
 
-        if (health<=0)
+        else
+        {
+            anim.SetBool("isRunning", true);
+        }
+
+        if (health <= 0)
         {
             PanelDeath.SetActive(true);
-          
+
             Destroy(gameObject);
-           
+
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
     void Flip()
     {
-       facingRight = !facingRight;
-       Vector3 Scaler = transform.localScale;
-       Scaler.x *= -1;
-       transform.localScale = Scaler;
-       
+        facingRight = !facingRight;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
+
+    }
+ 
+    private void StepSoundPlay()
+    {
+        audioSource.PlayOneShot(soundStep[Random.Range(0, soundStep.Length)]);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -127,19 +155,25 @@ public class Player : MonoBehaviour
             ChangeHealth(5);
             Instantiate(salveEffect, other.transform.position, Quaternion.identity);
             Destroy(other.gameObject);
+            Instantiate(soundSalve, transform.position, Quaternion.identity);
+
         }
-       else if (other.CompareTag("Shield"))
+        else if (other.CompareTag("Shield"))
         {
             if (!shield.activeInHierarchy)
             {
-            shield.SetActive(true);
-            shieldTimer.gameObject.SetActive(true);
-            shieldTimer.isCooldown = true;
-            Instantiate(shieldEffect, other.transform.position, Quaternion.identity);
-            Destroy(other.gameObject);
+                shield.SetActive(true);
+                shieldTimer.gameObject.SetActive(true);
+                shieldTimer.isCooldown = true;
+                speed = 5;
+                Instantiate(soundShield, transform.position, Quaternion.identity);
+
+                Instantiate(shieldEffect, other.transform.position, Quaternion.identity);
+                Destroy(other.gameObject);
             }
             else
             {
+               
                 shieldTimer.ResetTimer();
                 Destroy(other.gameObject);
             }
@@ -152,10 +186,12 @@ public class Player : MonoBehaviour
             }
             else if (!keyIcon.activeInHierarchy)
             {
-            keyIcon.SetActive(true);
-            Destroy(other.gameObject);
+                Instantiate(soundKey, transform.position, Quaternion.identity);
+
+                keyIcon.SetActive(true);
+                Destroy(other.gameObject);
             }
-         
+
         }
 
     }
@@ -177,6 +213,7 @@ public class Player : MonoBehaviour
             keyIcon.SetActive(false);
             other.gameObject.SetActive(false);
             //  keyButtonPush = false;
+            Instantiate(soundDoor, transform.position, Quaternion.identity);
 
         }
         if (other.CompareTag("Exit"))
@@ -207,4 +244,6 @@ public class Player : MonoBehaviour
        
 
     }
+
+
 }

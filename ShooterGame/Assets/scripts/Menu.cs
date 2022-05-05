@@ -10,11 +10,14 @@ public class Menu : MonoBehaviour
    public InputField inGame;
     public GameObject playButton;
    public GameObject SaveNameButton;
+    public GameObject ContinueButton;
     public Text PlayerName;
     public Slider slider;
     public GameObject loadingScene;
     public int levelToLoad;
-
+    public AudioClip mainSound;
+    private AudioSource audioSource;
+    public GameObject[] rules;
     //public Text PlayerID;
     //public Text PlayerNameDont;
     //public Text PlayerIDDont;
@@ -22,17 +25,19 @@ public class Menu : MonoBehaviour
 
     //  private string namePlayer;
 
-
+    bool a = false;
     int saveNameGame = 0;
 
     private void Start()
     {
-      
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = mainSound;
+        audioSource.Play();
         //for (int i = 0; i < dataBase.ItemsBD.Count; i++)
         //{
         //    PlayerName.text =  dataBase.ItemsBD[Random.Range(0, dataBase.ItemsBD.Count)].namePlayer;
         //    PlayerID.text =  dataBase.ItemsBD[Random.Range(0, dataBase.ItemsBD.Count)].id.ToString();
-          
+
         //}
         //var allNamesPlayers = Resources.LoadAll<PlayerInfo>("");
         //foreach(var playerInfo in allNamesPlayers)
@@ -40,7 +45,7 @@ public class Menu : MonoBehaviour
         //    Debug.Log(playerInfo.ItemsBD.);
 
         //}
-      //  PlayerName.text = inGame.text.ToString();
+        //  PlayerName.text = inGame.text.ToString();
         inGame.GetComponent<Text>();
        // PlayerPrefs.SetString("playerName", inGame.text.ToString());
 
@@ -52,7 +57,11 @@ public class Menu : MonoBehaviour
     {
         //PlayerIDDont.text = PlayerID.text;
         //PlayerNameDont.text = PlayerName.text;
-      // PlayerName.text = PlayerPrefs.GetString("playerName");
+        // PlayerName.text = PlayerPrefs.GetString("playerName");
+        if (PlayerPrefs.HasKey("playerName"))
+        {
+            ContinueButton.GetComponent<Button>().interactable = true;
+        }
         if (inGame.text == "")
         {
             SaveNameButton.GetComponent<Button>().interactable = false;
@@ -63,7 +72,7 @@ public class Menu : MonoBehaviour
 
             SaveNameButton.GetComponent<Button>().interactable = true;
 
-            PlayerPrefs.SetString("playerName", inGame.text.ToString());// это создает имя перса
+            PlayerPrefs.SetString("playerName", inGame.text.ToString());// это создаеЃEимя ЃEрсЃE
 
 
 
@@ -90,13 +99,15 @@ public class Menu : MonoBehaviour
           saveNameGame = 1;
 
     }
+
     public void StartGame()
     {
-        
 
-         //   SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            Time.timeScale = 1f;
-            StartCoroutine(LoadingScreenOnFade());
+     //    rules[4].SetActive(false);
+       //   SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+      
+        Time.timeScale = 1f;
+           StartCoroutine(LoadingScreenOnFade());
 
     }
     IEnumerator LoadingScreenOnFade()
@@ -109,16 +120,68 @@ public class Menu : MonoBehaviour
             slider.value = progress;
             yield return null;
         }
+    }
+        //}
+        //IEnumerator LoadingRules()
+        //{
+        //    AsyncOperation operation = SceneManager.LoadSceneAsync(levelToLoad);
+        //    loadingScene.SetActive(true);
+        //    while (!operation.isDone)
+        //    {
+        //        float progress = Mathf.Clamp01(operation.progress / 0.9f);
+        //        slider.value = progress;
+        //        yield return null;
+        //    }
+
+        //}
+        //public void SwitchRules()
+        //{
+        //    rules[0].SetActive(true);
+        //    if (rules[0].activeInHierarchy)
+        //    {
+        //        rules[0].SetActive(false);
+        //        rules[1].SetActive(true);
+        //        a = true;
+        //    }
+        //}
+        public void NextRules1()
+    {
+
+        rules[0].SetActive(true);
+    }
+    public void NextRules2()
+    {
+        rules[0].SetActive(false);
+        rules[1].SetActive(true);
+
 
     }
-    public void OpenRules()
+    public void NextRules3()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+
+        rules[1].SetActive(false);
+        rules[2].SetActive(true);
+
     }
-    public void OpenMenu()
+    public void NextRules4()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2 );
+        rules[2].SetActive(false);
+        rules[3].SetActive(true);
+
+
     }
+    public void NextRules5()
+    {
+        rules[3].SetActive(false);
+        rules[4].SetActive(true);
+
+
+    }
+   
+    //public void OpenMenu()
+    //{
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2 );
+    //}
     public void Exit()
     {
         Debug.Log("quit");

@@ -16,6 +16,8 @@ TagManager:
   - Wall
   - Door
   - Key
+  - EnemyGhost
+  - EnemyGrib
   layers:
   - Default
   - TransparentFX

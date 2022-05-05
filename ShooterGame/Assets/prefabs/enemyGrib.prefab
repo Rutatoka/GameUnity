@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 7609422921470939561}
   m_Layer: 11
   m_Name: enemyGrib
-  m_TagString: Enemy
+  m_TagString: EnemyGrib
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,7 +349,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -388,14 +388,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatingDamage: {fileID: 8483397761454017293, guid: 9134659e36944ae4eac2319526a4884c, type: 3}
   health: 10
-  speed: 5
+  speed: 8
   timeBtwAtack: 1
   startTimeBtwAtack: 3
   damage: 3
   startStopTime: 0.7
-  normalspeed: 2
+  normalspeed: 8
   effect1: {fileID: 1321647695264694755, guid: 3f2f321f0b2e1f9499055811210db148, type: 3}
-  target: {fileID: 0}
+  soundHitHero: {fileID: 2414967220405079744, guid: 6a9b07bd48c53aa4fa6ac874231b04d6, type: 3}
+  soundDieGhost: {fileID: 7851157786736808055, guid: 3f850a21bb672864098b1310173f13f7, type: 3}
+  soundDieGrib: {fileID: 7359073888436688144, guid: 6876cf9c1ffb88549b5d28605cc33374, type: 3}
 --- !u!58 &7609422921470939561
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 7609422921470939561}
   m_Layer: 11
   m_Name: enemyGhost
-  m_TagString: Enemy
+  m_TagString: EnemyGhost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,7 +347,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -393,7 +393,9 @@ MonoBehaviour:
   startStopTime: 0.7
   normalspeed: 2
   effect1: {fileID: 1321647695264694755, guid: 3f2f321f0b2e1f9499055811210db148, type: 3}
-  target: {fileID: 0}
+  soundHitHero: {fileID: 2414967220405079744, guid: 6a9b07bd48c53aa4fa6ac874231b04d6, type: 3}
+  soundDieGhost: {fileID: 7851157786736808055, guid: 3f850a21bb672864098b1310173f13f7, type: 3}
+  soundDieGrib: {fileID: 7359073888436688144, guid: 6876cf9c1ffb88549b5d28605cc33374, type: 3}
 --- !u!58 &7609422921470939561
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -586,6 +588,7 @@ GameObject:
   - component: {fileID: 6694487434129483435}
   - component: {fileID: 3462558295401438409}
   - component: {fileID: 8880366414146250758}
+  - component: {fileID: 9203425264296954469}
   m_Layer: 11
   m_Name: swordEnemy
   m_TagString: Untagged
@@ -676,3 +679,100 @@ MonoBehaviour:
   bullet: {fileID: 1677248084286804321, guid: 038a9c1893895354d927eece251550fd, type: 3}
   shotPoint: {fileID: 2776440223424829026}
   StartTimeBtfShoths: 1
+  soundBow: {fileID: 4680818204610242022, guid: f88a751275b1d6d42b691c01eaa6d9ea, type: 3}
+--- !u!82 &9203425264296954469
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232373480869223054}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

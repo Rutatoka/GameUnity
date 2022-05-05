@@ -13,12 +13,16 @@ public class Gun : MonoBehaviour
     private Player player;
     private float rotZ;
     private Vector3 difference;
+    //  public GameObject soundShoot;
+    public GameObject soundBow;
+    private AudioSource audioSource;
 
 
     public enum GunType { Default, Enemy }
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
 
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -59,6 +63,8 @@ public class Gun : MonoBehaviour
     }
     public void Shoot()
     {
+        Instantiate(soundBow, transform.position, Quaternion.identity);
+
         Instantiate(bullet, shotPoint.position, shotPoint.rotation);
         timeBtfShoths = StartTimeBtfShoths;
     }
