@@ -72,3 +72,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraPos: {x: 0, y: 0, z: 0}
   playerPos: {x: 0, y: 0, z: 0}
+  camSize: 11

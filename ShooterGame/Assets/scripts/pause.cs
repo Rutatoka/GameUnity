@@ -12,7 +12,9 @@ public class pause : MonoBehaviour
 
     public GameObject PanelPause;
     public GameObject PanelDeath;
-   // private Player player;
+    public GameObject PanelLvl;
+
+    // private Player player;
     public Text textScore;
     public Text textName;
     //public AudioClip[] mainSoundAndMenu;
@@ -79,7 +81,26 @@ public class pause : MonoBehaviour
     public void ExitGame()
     {
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(0);
+
+    }
+    public void ChoiseLvl()
+    {
+
+        PanelLvl.SetActive(true);
+        PanelPause.SetActive(false);
+    }
+
+    public void ChoiseLvl1()
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
+
+    }
+    public void ChoiseLvl2()
+    {
+        SceneManager.LoadScene(2);
+        Time.timeScale = 1f;
 
     }
     public void PauseGame()

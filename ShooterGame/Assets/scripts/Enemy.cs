@@ -109,7 +109,7 @@ public class Enemy : MonoBehaviour
             if (timeBtwAtack<=0)
             {
                 anim.SetTrigger("attackEnemy");
-
+              //  OnEnemyAttack();
             }
             else
             {
@@ -118,9 +118,9 @@ public class Enemy : MonoBehaviour
         }
     }
     public void OnEnemyAttack() {
-    Instantiate(effect1, player.transform.position, Quaternion.identity);
-        player.health -= damage;
-       // int rand = Random.Range(0, soundHitHero.Length);
+          Instantiate(effect1, player.transform.position, Quaternion.identity);
+        player.ChangeHealth(-damage);
+        // int rand = Random.Range(0, soundHitHero.Length);
         Instantiate(soundHitHero, transform.position, Quaternion.identity);
 
         player.healthDisplay.text = ""+player.health;
