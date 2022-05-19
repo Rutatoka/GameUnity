@@ -19,7 +19,6 @@ public class Bonus : MonoBehaviour
         isCooldown = true;
     }
 
-    
     void Update()
     {
         if (isCooldown)
@@ -28,7 +27,7 @@ public class Bonus : MonoBehaviour
             if (shieldImage.fillAmount<=0)
             {
                 shieldImage.fillAmount = 1;
-                isCooldown = false;
+                isCooldown = false;            
                 player.shield.SetActive(false);
                 gameObject.SetActive(false);
             }

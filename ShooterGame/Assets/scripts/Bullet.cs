@@ -19,9 +19,6 @@ public class Bullet : MonoBehaviour
     [SerializeField] bool enemyBullet;
     private void Start()
     {
-
-        //  player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        //audioSource = GetComponent<AudioSource>();
         Invoke("DestroyBullet", lifetime);
     }
     private void Update()
@@ -32,40 +29,32 @@ public class Bullet : MonoBehaviour
             if (hitInfo.collider.CompareTag("EnemyGrib")|| hitInfo.collider.CompareTag("EnemyGhost"))
             {
                 hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
+            
                 Instantiate(effect, transform.position, Quaternion.identity);
                 DestroyBullet();
-             //   HitSoundPlayEnemy();
+            }
+            if ( hitInfo.collider.CompareTag("Boss"))
+            {             
+                hitInfo.collider.GetComponent<Boss>().TakeDamage(damage);
+                Instantiate(effect, transform.position, Quaternion.identity);
+                DestroyBullet();
             }
             if (hitInfo.collider.CompareTag("falls"))
-            {
-               
+            {              
                 Instantiate(effect, transform.position, Quaternion.identity);
                 DestroyBullet();
             }
             if (hitInfo.collider.CompareTag("Player") && enemyBullet)
-            {
-             
+            {           
                 hitInfo.collider.GetComponent<Player>().ChangeHealth(-damage);
                 Instantiate(effect, transform.position, Quaternion.identity);
                 int rand = Random.Range(0, soundHitHero.Length);
                 Instantiate(soundHitHero[rand], transform.position, Quaternion.identity);
-
                 DestroyBullet();
-                //HitSoundPlayHero();
-
             }
-
         }
         transform.Translate(Vector2.up * speed * Time.deltaTime);
     } 
-    //public void HitSoundPlayHero()
-    //{
-    //    audioSource.PlayOneShot(soundHitsHero[Random.Range(0, soundHitsHero.Length)]);
-    //}
-    //public void HitSoundPlayEnemy()
-    //{
-    //    audioSource.PlayOneShot(soundHitsEnemy[Random.Range(0, soundHitsEnemy.Length)]);
-    //}
     public void DestroyBullet()
     {
         Instantiate(destroyEffect, transform.position, Quaternion.identity);

@@ -13,6 +13,7 @@ public class AddRoom : MonoBehaviour
     [Header("Enemies")]
     public GameObject[] enemyTypes;
     public Transform[] enemySpawners;
+
     [Header("Powerups")]
     public GameObject shield;
     public GameObject healthPotion;
@@ -26,48 +27,57 @@ public class AddRoom : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-
         variants = GameObject.FindGameObjectWithTag("Rooms").GetComponent<VariableRooms>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //if (other.CompareTag("Player")&& )
+        //{
+        //    panelBoss.SetActive(true);
+        //}
         if (other.CompareTag("Player") &&!spawned)
         {
             spawned = true;
 
             foreach (Transform spawner in enemySpawners)
             {
-                int rand = Random.Range(0, 11);
-                if (rand<9)
+                int rand = Random.Range(0, 15);
+                if (rand<13)
                 {
                     GameObject enemyType = enemyTypes[Random.Range(0, enemyTypes.Length)];
                     GameObject enemy = Instantiate(enemyType, spawner.position, Quaternion.identity) as GameObject;
                     enemy.transform.parent = transform;
                     enemies.Add(enemy);
                 }
-                //else if (rand == 7)
-                //{
-
-                //}
-                //else if (rand == 8)
-                //{
-
-                //}
-                else if (rand == 9)
+                else if (rand == 13)
                 {
                     Instantiate(healthPotion, spawner.position, Quaternion.identity);
-
                 }
-                else if (rand == 10)
+                else if (rand == 14)
                 {
                     Instantiate(shield, spawner.position, Quaternion.identity);
-
                 }
             }
             StartCoroutine(CheckEnemies());
-        }
-            
+        }   
+    //    else if (other.CompareTag("Player"))
+    //    {
+    //        foreach(GameObject enemy in enemies)
+    //        {
+    //            enemy.GetComponent<Enemy>().playerNotInRoom = false;
+    //        }
+    //    }
     }
+    //private void OnTriggerExit2D(Collider2D other)
+    //{
+    //    if (other.CompareTag("Player") )
+    //    {
+    //        foreach (GameObject enemy in enemies)
+    //        {
+    //            enemy.GetComponent<Enemy>().playerNotInRoom = true;
+    //        }
+    //    }
+    //}
     IEnumerator CheckEnemies()
     {
         yield return new WaitForSeconds(1f);
@@ -82,9 +92,7 @@ public class AddRoom : MonoBehaviour
             {
                 Instantiate(wallEffect, wall.transform.position, Quaternion.identity);
                 Instantiate(soundDoor, transform.position, Quaternion.identity);
-
                 Destroy(wall);
-
             }
         }
         wallDestroyed = true;

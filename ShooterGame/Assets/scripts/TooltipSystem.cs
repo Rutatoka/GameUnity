@@ -8,8 +8,6 @@ public class TooltipSystem : MonoBehaviour
 {
     private static TooltipSystem current;
     public Tooltip tooltip;
-    // Start is called before the first frame update
-
 
     private void Awake()
     {

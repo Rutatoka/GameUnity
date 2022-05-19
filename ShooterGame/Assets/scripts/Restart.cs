@@ -24,51 +24,32 @@ public class Restart : MonoBehaviour
     public Text[] textScore;
     public Text[] textName;
     public bool[] isFull;
-   
- //   private int[] checkLiders;
 
     private void Start()
     {
-
         var score = PlayerPrefs.GetInt("Score");
         var name = PlayerPrefs.GetString("playerName");
-
         AddToTable(name, score);
-
         var table = GetScoreTable();
-        
-        
-        for (int i =0; i < table.table.Count;i++) {
-
+        for (int i =0; i < table.table.Count;i++) 
+        {
             textScore[i].text =table.table[i].score.ToString();
-            textName[i].text = table.table[i].name;
-            
+            textName[i].text = table.table[i].name;        
         }
-        //   player.scoreDisplayDeath.text = "" + player.score;
-        // player.DisplayNameDeath.text = "" + player.DisplayNameDeath.text;
-
-    
-    }
-    private void Update()
-    {
-
     }
     public void StartAgainGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
         Time.timeScale = 1f;
     }
-
     private void AddToTable( string playername, int score )
     {
         ScoreTable scoreTable = GetScoreTable(); 
         var index = scoreTable.table.FindIndex( user => user.name == playername);
-
         if (index >= 0) {
             var prevScore = scoreTable.table[index].score;
             if ( score > prevScore|| score==0 )
-            {
-             
+            {            
                 scoreTable.table[index].score = score;
             }
         }
@@ -76,15 +57,10 @@ public class Restart : MonoBehaviour
         {
             scoreTable.table.Add( new TableUser{name = playername, score = score} );
         }
-        
-        //scoreTable.table.Sort((a, b) => ); можно отсортировать сразу ее и хранить сортированной 
-
         var jsonString = JsonUtility.ToJson(scoreTable);
-        
         PlayerPrefs.SetString("playerTable", jsonString);
         PlayerPrefs.Save();
     }
-
     private ScoreTable GetScoreTable()
     {
         var playerTableStr = PlayerPrefs.GetString("playerTable");
@@ -93,32 +69,17 @@ public class Restart : MonoBehaviour
             scoreTable = new ScoreTable();
             scoreTable.table = new List<TableUser>();
         }
-
         return scoreTable;
     }
-
     public void ClearNames()
     {
-        //for (int i = 0; i < dataBase.ItemsBD.Count; i++)
-        //{
-        //    PlayerName.text =  dataBase.ItemsBD[Random.Range(0, dataBase.ItemsBD.Count)].namePlayer;
-        //    PlayerID.text =  dataBase.ItemsBD[Random.Range(0, dataBase.ItemsBD.Count)].id.ToString();
-        //}
-
-   
         var table = GetScoreTable();
         PlayerPrefs.DeleteKey("playerTable");
-
         PlayerPrefs.DeleteKey("Score");
-     //   PlayerPrefs.DeleteKey("playerName");
-
-        //table = null;
         for (int i = 0;  i < textScore.Length; i++)
         {
-
             textScore[i].text = " ";
             textName[i].text = " ";
-
         }
     }
 }

@@ -12,9 +12,9 @@ public class Player : MonoBehaviour
     private Animator anim;
     private Vector2 moveInput;
     private Vector2 moveVelocity;
-    private int score;
+    public int score;
     private AudioSource audioSource;
-
+  
     [Header("effects")]
     public GameObject salveEffect;
     public GameObject shieldEffect;
@@ -34,8 +34,7 @@ public class Player : MonoBehaviour
     public GameObject PanelDeath;
     public GameObject PanelWin;
     public Bonus shieldTimer;
-    public Slider slider;
-    public int levelToLoad;
+
 
     [Header("Text")]
     public Text textScore;
@@ -47,18 +46,26 @@ public class Player : MonoBehaviour
     public GameObject keyIcon;
     public GameObject keyEffect;
 
-  
 
     private void Start()
     {
+      
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         healthDisplay.text = "" + health; 
         DisplayName.text = PlayerPrefs.GetString("playerName");
+        textScore.text = PlayerPrefs.GetInt("Score").ToString();
     }
-    private void Update()
+
+   
+
+private void Update()
     {
+       
+        PlayerPrefs.SetInt("Score", score);
+        
+      
         if (health >= 20)
         {
             health = 20;
@@ -66,7 +73,7 @@ public class Player : MonoBehaviour
         }
         moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = moveInput.normalized * speed;
-        PlayerPrefs.SetInt("Score", score);
+       
     }
     private void FixedUpdate()
     {
@@ -107,7 +114,7 @@ public class Player : MonoBehaviour
             aura.SetActive(false);
         }
     }
-    void Flip()
+    public void Flip()
     {
         facingRight = !facingRight;
         Vector3 Scaler = transform.localScale;
@@ -134,14 +141,17 @@ public class Player : MonoBehaviour
             if (!shield.activeInHierarchy)
             {
                 shield.SetActive(true);
+                
                 shieldTimer.gameObject.SetActive(true);
-                shieldTimer.isCooldown = true;              
+                shieldTimer.isCooldown = true;  
+                
                 Instantiate(soundShield, transform.position, Quaternion.identity);
                 Instantiate(shieldEffect, other.transform.position, Quaternion.identity);
                 Destroy(other.gameObject);
             }
             else
-            {               
+            {
+              
                 shieldTimer.ResetTimer();
                 Destroy(other.gameObject);
             }
@@ -174,7 +184,9 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Exit") || Input.GetKey(KeyCode.Escape))
         {
             //SceneManager.LoadScene(2);
+           
             PanelWin.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 

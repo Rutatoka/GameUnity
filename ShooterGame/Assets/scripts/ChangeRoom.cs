@@ -16,9 +16,7 @@ public Vector3 cameraPos;
     private Camera cam;
     private void Start()
     {
-      //  camSize = 11;
         cam = Camera.main.GetComponent<Camera>();
-
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

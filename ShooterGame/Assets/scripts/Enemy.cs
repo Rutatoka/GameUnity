@@ -16,10 +16,12 @@ public class Enemy : MonoBehaviour
     private Animator anim;
     private Player player;
     private float stopTime;
+    private bool stopped;
     private AddRoom room;
     public float startStopTime;
-    public float normalspeed;
-   public GameObject effect1;
+    //  public float normalspeed;
+    [HideInInspector] public bool playerNotInRoom;
+    public GameObject effect1;
     public GameObject soundHitHero;
     public GameObject soundDieGhost;
     public GameObject soundDieGrib;
@@ -35,18 +37,8 @@ public class Enemy : MonoBehaviour
      
     }
     private void Update()
-
     {
 
-        if (stopTime<=0)
-        {
-            speed = normalspeed;
-        }
-        else
-        {
-            speed = 0;
-            stopTime -= Time.deltaTime;
-        }
         if (health <= 0)
         {
             if (gameObject.CompareTag("EnemyGrib"))
@@ -62,35 +54,27 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
                 room.enemies.Remove(gameObject);
                 Instantiate(soundDieGhost, transform.position, Quaternion.identity);
-
                 player.Kill();
             }
-
-
-            // player.scoreDisplayGame.text = "" + player.score;
-            // PlayerPrefs.SetInt("Score", score);
-            //  Instantiate(effect1, transform.position , Quaternion.identity);
-
-
         }
         if (player.transform.position.x >transform.position.x)
         {
           transform.eulerAngles = new Vector3(0, 180, 0);
-      }
+        }
       
-     else
-       {
+        else
+        {
           transform.eulerAngles = new Vector3(0, 0, 0);
-
-       }
+        }
 
        if(player.transform.position.y != transform.position.y)
         {
             transform.position = player.transform.position;
         }
-        //  Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
-        transform.position = Vector2.MoveTowards(rb.position, player.transform.position, speed * Time.deltaTime);
-      
+   
+                transform.position = Vector2.MoveTowards(rb.position, player.transform.position, speed * Time.deltaTime);
+            
+        
 
     }
     public void TakeDamage(int damage)
@@ -100,7 +84,6 @@ public class Enemy : MonoBehaviour
         Vector2 damagePos = new Vector2(transform.position.x, transform.position.y + 2.75f);
         Instantiate(floatingDamage, damagePos, Quaternion.identity);
         floatingDamage.GetComponentInChildren<FloatingDamaeg>().damage = damage;
-      //  Instantiate(effect1, transform.position, Quaternion.identity);
     }
     public void OnTriggerStay2D(Collider2D other)
     {
@@ -109,7 +92,6 @@ public class Enemy : MonoBehaviour
             if (timeBtwAtack<=0)
             {
                 anim.SetTrigger("attackEnemy");
-              //  OnEnemyAttack();
             }
             else
             {
@@ -118,11 +100,9 @@ public class Enemy : MonoBehaviour
         }
     }
     public void OnEnemyAttack() {
-          Instantiate(effect1, player.transform.position, Quaternion.identity);
+        Instantiate(effect1, player.transform.position, Quaternion.identity);
         player.ChangeHealth(-damage);
-        // int rand = Random.Range(0, soundHitHero.Length);
         Instantiate(soundHitHero, transform.position, Quaternion.identity);
-
         player.healthDisplay.text = ""+player.health;
         timeBtwAtack = startTimeBtwAtack;
     }

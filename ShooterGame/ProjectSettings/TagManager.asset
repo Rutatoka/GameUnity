@@ -18,6 +18,8 @@ TagManager:
   - Key
   - EnemyGhost
   - EnemyGrib
+  - Slider
+  - Boss
   layers:
   - Default
   - TransparentFX

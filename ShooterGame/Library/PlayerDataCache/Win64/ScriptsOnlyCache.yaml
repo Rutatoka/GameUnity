@@ -30,6 +30,7 @@ ScriptsOnlyBuild:
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
@@ -225,7 +226,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 8160}
     - Class: 114
-      Script: {instanceID: 21746}
+      Script: {instanceID: 21736}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -362,7 +363,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 8160}
     - Class: 114
-      Script: {instanceID: 21746}
+      Script: {instanceID: 21736}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -533,8 +534,6 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
-      Script: {instanceID: 0}
-    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}

@@ -21,7 +21,10 @@ public class pause : MonoBehaviour
     public AudioClip mainSound;
 
     private AudioSource audioSource;
+    public Slider slider;
+    public GameObject loadingScene;
 
+    public int levelToLoad;
     //public Text textID;
     //private Text NameOfPlayer;
     //private Text IdOfPlayer;
@@ -31,94 +34,77 @@ public class pause : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-
-        //  player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        //PanelDeath = GameObject.Find("deathPlayer");
-        //PanelPause = GameObject.Find("pausePanel");
-        //    textName.text = player.DisplayName.text;
-        // textID.text = player.DisplayID.text;
-        //NameOfPlayer = GameObject.Find("NamePlayer").GetComponent<Text>();
-        //IdOfPlayer = GameObject.Find("IdPlayer").GetComponent<Text>();
-        //   textScore.text = PlayerPrefs.GetInt("Score").ToString();
         audioSource.clip = mainSound;
-        // audioSource.Play();
-
         audioSource.Play();
     }
 
 
     private void Update()
     {
-        
-        //   player.scoreDisplayPause.text = "" + player.score;
-       // textScore.text = PlayerPrefs.GetInt("Score").ToString();
-
         if (!PlayerPrefs.HasKey("playerName")&& !PlayerPrefs.HasKey("Score"))
         {
             PlayerPrefs.SetString("playerName", "NoName");
         }
-
         else
         {
             textName.text = PlayerPrefs.GetString("playerName");
             textScore.text = PlayerPrefs.GetInt("Score").ToString();
         }
-        //   player.DisplayNamePause.text = "" + player.DisplayNameGame.text;
         if (Input.GetKey(KeyCode.Space)&& !PanelDeath.activeInHierarchy)
         {
             PauseGame();
         }
-
     }
     public void ExitGamePanel()
     { 
         PanelPause.SetActive(false);
+        Time.timeScale = 0f;
         PanelDeath.SetActive(true);
-      
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-
     }
     public void ExitGame()
     {
-
         SceneManager.LoadScene(0);
-
     }
     public void ChoiseLvl()
     {
-
         PanelLvl.SetActive(true);
+        Time.timeScale = 0f;
+
         PanelPause.SetActive(false);
     }
 
     public void ChoiseLvl1()
     {
-        SceneManager.LoadScene(1);
+       // SceneManager.LoadScene(1);
         Time.timeScale = 1f;
-
+        StartCoroutine(LoadingScreenOnFade());
     }
+    IEnumerator LoadingScreenOnFade()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(levelToLoad);
+        loadingScene.SetActive(true);
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+            slider.value = progress;
+            yield return null;
+        }
+    }
+
     public void ChoiseLvl2()
     {
-        SceneManager.LoadScene(2);
+        StartCoroutine(LoadingScreenOnFade());
         Time.timeScale = 1f;
-
     }
     public void PauseGame()
     {
-        //audioSource.Pause();
-      //  audioSource.clip= menuSound;
-     // audioSource.Pause();
         PanelPause.SetActive(true);
         Time.timeScale = 0f;
     }
     public void ResetGame()
     {
-       // audioSource.Play();
-      //  audioSource.clip = mainSound;
-      //  audioSource.Play();
+
         PanelPause.SetActive(false);
         Time.timeScale = 1f;
     }
-   
-
 }

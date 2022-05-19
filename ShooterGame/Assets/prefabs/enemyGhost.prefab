@@ -347,14 +347,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 220
+  m_LinearDrag: 1.2
+  m_AngularDrag: 0.81
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &7609422921470939563
 CapsuleCollider2D:
@@ -391,7 +391,7 @@ MonoBehaviour:
   startTimeBtwAtack: 3
   damage: 3
   startStopTime: 0.7
-  normalspeed: 2
+  playerNotInRoom: 0
   effect1: {fileID: 1321647695264694755, guid: 3f2f321f0b2e1f9499055811210db148, type: 3}
   soundHitHero: {fileID: 2414967220405079744, guid: 6a9b07bd48c53aa4fa6ac874231b04d6, type: 3}
   soundDieGhost: {fileID: 7851157786736808055, guid: 3f850a21bb672864098b1310173f13f7, type: 3}
@@ -678,6 +678,7 @@ MonoBehaviour:
   offset: -90
   bullet: {fileID: 1677248084286804321, guid: 038a9c1893895354d927eece251550fd, type: 3}
   shotPoint: {fileID: 2776440223424829026}
+  shotPoints: []
   StartTimeBtfShoths: 1
   soundBow: {fileID: 4680818204610242022, guid: f88a751275b1d6d42b691c01eaa6d9ea, type: 3}
 --- !u!82 &9203425264296954469
