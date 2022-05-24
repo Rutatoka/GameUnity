@@ -5175,9 +5175,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 210
+  m_LinearDrag: 1.2
+  m_AngularDrag: 0.2
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -5196,6 +5196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca102826365c73a46b5e8c772b36bab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   salveEffect: {fileID: 1321647695264694755, guid: 26a00eb73023ae849bdb36f35652a015, type: 3}
   shieldEffect: {fileID: 1321647695264694755, guid: b29206b73db4d7f4fb21b9431b90ef5a, type: 3}
   shield: {fileID: 587924928}
@@ -5212,8 +5213,6 @@ MonoBehaviour:
   PanelDeath: {fileID: 1141265485}
   PanelWin: {fileID: 1973866255}
   shieldTimer: {fileID: 1471693899}
-  slider: {fileID: 1514877410}
-  levelToLoad: 2
   textScore: {fileID: 57480857}
   healthDisplay: {fileID: 80013121}
   DisplayName: {fileID: 497050537}

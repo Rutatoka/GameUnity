@@ -49,7 +49,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-      
+        Time.timeScale = 1f;
+
         audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -181,7 +182,7 @@ private void Update()
 
         }
 
-        if (other.CompareTag("Exit") || Input.GetKey(KeyCode.Escape))
+        if (other.CompareTag("Exit"))
         {
             //SceneManager.LoadScene(2);
            

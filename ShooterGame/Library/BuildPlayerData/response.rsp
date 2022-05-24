@@ -18,6 +18,7 @@
 -a="C:\Work\Diplom\ShooterGame\Library\PlayerScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll"
 -a="C:\Work\Diplom\ShooterGame\Library\PlayerScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll"
 -a="C:\Work\Diplom\ShooterGame\Library\PlayerScriptAssemblies\Unity.2D.Common.Runtime.dll"
+-a="C:\Work\Diplom\ShooterGame\Library\PlayerScriptAssemblies\Scripts.dll"
 -a="C:\Work\Diplom\ShooterGame\Library\PlayerScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll"
 -a="C:\Work\Diplom\ShooterGame\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll"
 -s="C:\Program Files\Unity\Hub\Editor\2020.3.20f1\Editor\Data\Managed\UnityEngine"

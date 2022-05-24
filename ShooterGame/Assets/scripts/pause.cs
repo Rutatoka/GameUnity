@@ -36,6 +36,7 @@ public class pause : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = mainSound;
         audioSource.Play();
+       // Time.timeScale = 1f;
     }
 
 
@@ -82,6 +83,7 @@ public class pause : MonoBehaviour
     IEnumerator LoadingScreenOnFade()
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(levelToLoad);
+        Time.timeScale = 1f;
         loadingScene.SetActive(true);
         while (!operation.isDone)
         {
