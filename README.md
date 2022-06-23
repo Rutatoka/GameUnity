@@ -1,1 +1,1 @@
-открыть папку ShooterGame, открыть папку bin, запустить файл ShooterGame.exe
+скачать bin, запустить файл ShooterGame.exe
